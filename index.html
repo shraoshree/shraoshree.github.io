@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,9 +10,7 @@
     <style>
         :root {
             --bg: #070914;
-            --bg-soft: #0c1020;
             --card: rgba(17, 24, 39, 0.58);
-            --card-strong: rgba(15, 23, 42, 0.78);
             --border: rgba(148, 163, 184, 0.14);
             --text: #f8fafc;
             --muted: #94a3b8;
@@ -31,48 +30,65 @@
         }
 
         body {
-            font-family: Inter, -apple-system, BlinkMacSystemFont,
-                         "Segoe UI", Arial, sans-serif;
+            font-family:
+                Inter,
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                Arial,
+                sans-serif;
+
             background:
-                radial-gradient(circle at 15% 15%,
-                    rgba(56, 189, 248, 0.12),
-                    transparent 28%),
-                radial-gradient(circle at 85% 22%,
+                radial-gradient(
+                    circle at 12% 18%,
+                    rgba(56, 189, 248, 0.10),
+                    transparent 28%
+                ),
+                radial-gradient(
+                    circle at 87% 25%,
                     rgba(139, 92, 246, 0.13),
-                    transparent 28%),
-                radial-gradient(circle at 55% 80%,
-                    rgba(59, 130, 246, 0.08),
-                    transparent 30%),
+                    transparent 30%
+                ),
+                radial-gradient(
+                    circle at 55% 82%,
+                    rgba(59, 130, 246, 0.07),
+                    transparent 30%
+                ),
                 var(--bg);
+
             color: var(--muted);
             line-height: 1.7;
             overflow-x: hidden;
         }
+
+        /* SUBTLE TECH GRID */
 
         body::before {
             content: "";
             position: fixed;
             inset: 0;
             pointer-events: none;
-            opacity: 0.22;
+            z-index: -1;
 
             background-image:
                 linear-gradient(
-                    rgba(255,255,255,0.025) 1px,
+                    rgba(255, 255, 255, 0.022) 1px,
                     transparent 1px
                 ),
                 linear-gradient(
                     90deg,
-                    rgba(255,255,255,0.025) 1px,
+                    rgba(255, 255, 255, 0.022) 1px,
                     transparent 1px
                 );
 
-            background-size: 55px 55px;
-            mask-image: linear-gradient(
-                to bottom,
-                black,
-                transparent 85%
-            );
+            background-size: 58px 58px;
+
+            mask-image:
+                linear-gradient(
+                    to bottom,
+                    black,
+                    transparent 88%
+                );
         }
 
         .container {
@@ -81,10 +97,13 @@
         }
 
 
-        /* ---------------- NAVIGATION ---------------- */
+        /* =========================================
+           NAVIGATION
+        ========================================= */
 
         nav {
-            height: 84px;
+            height: 82px;
+
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -102,13 +121,14 @@
         nav ul {
             display: flex;
             list-style: none;
-            gap: 30px;
+            gap: 29px;
         }
 
         nav a {
             color: var(--muted);
             text-decoration: none;
             font-size: 14px;
+
             transition: 0.2s ease;
         }
 
@@ -117,38 +137,26 @@
         }
 
 
-        /* ---------------- INTRO ---------------- */
+        /* =========================================
+           INTRO
+        ========================================= */
 
         .intro {
-            min-height: 77vh;
+            min-height: 73vh;
+
             display: flex;
             align-items: center;
+
             position: relative;
+
             padding: 70px 0;
-        }
 
-        .intro::after {
-            content: "";
-            position: absolute;
-
-            width: 500px;
-            height: 500px;
-
-            right: -260px;
-            top: 70px;
-
-            background: radial-gradient(
-                circle,
-                rgba(139,92,246,0.18),
-                transparent 65%
-            );
-
-            filter: blur(10px);
-            pointer-events: none;
+            overflow: hidden;
         }
 
         .intro-content {
-            max-width: 870px;
+            max-width: 760px;
+
             position: relative;
             z-index: 2;
         }
@@ -156,39 +164,48 @@
         .eyebrow {
             font-family: "Courier New", monospace;
             color: var(--blue);
+
             font-size: 16px;
-            margin-bottom: 18px;
+
+            margin-bottom: 17px;
         }
 
         .intro h1 {
             color: var(--text);
-            font-size: clamp(48px, 7vw, 78px);
-            line-height: 1.03;
-            letter-spacing: -2.5px;
-            margin-bottom: 12px;
+
+            font-size: clamp(42px, 5.5vw, 64px);
+
+            line-height: 1.05;
+            letter-spacing: -2px;
+
+            margin-bottom: 15px;
         }
 
         .intro h2 {
-            font-size: clamp(29px, 4vw, 44px);
+            font-size: clamp(25px, 3vw, 36px);
+
             line-height: 1.2;
 
-            background: linear-gradient(
-                90deg,
-                #cbd5e1,
-                #38bdf8,
-                #a78bfa
-            );
+            background:
+                linear-gradient(
+                    90deg,
+                    #cbd5e1,
+                    #38bdf8,
+                    #818cf8
+                );
 
             -webkit-background-clip: text;
             background-clip: text;
+
             color: transparent;
 
-            margin-bottom: 26px;
+            margin-bottom: 25px;
         }
 
         .intro-description {
-            max-width: 720px;
-            font-size: 17px;
+            max-width: 700px;
+
+            font-size: 16.5px;
             color: var(--muted);
         }
 
@@ -196,11 +213,16 @@
             color: #c4b5fd;
         }
 
+
+        /* BUTTONS */
+
         .buttons {
             display: flex;
             flex-wrap: wrap;
+
             gap: 12px;
-            margin-top: 34px;
+
+            margin-top: 32px;
         }
 
         .button {
@@ -212,59 +234,133 @@
             border-radius: 8px;
 
             color: #dbeafe;
+
             text-decoration: none;
             font-size: 14px;
 
-            background: rgba(255,255,255,0.025);
+            background: rgba(255, 255, 255, 0.025);
+
             backdrop-filter: blur(12px);
 
             transition: 0.22s ease;
         }
 
         .button:hover {
-            border-color: rgba(56,189,248,0.55);
+            border-color: rgba(56, 189, 248, 0.55);
+
             transform: translateY(-2px);
-            background: rgba(56,189,248,0.08);
+
+            background: rgba(56, 189, 248, 0.08);
         }
 
         .button-primary {
             border-color: transparent;
 
-            background: linear-gradient(
-                135deg,
-                #38bdf8,
-                #818cf8
-            );
+            background:
+                linear-gradient(
+                    135deg,
+                    #38bdf8,
+                    #818cf8
+                );
 
             color: #050816;
+
             font-weight: 700;
         }
 
         .button-primary:hover {
-            background: linear-gradient(
-                135deg,
-                #7dd3fc,
-                #a78bfa
-            );
+            background:
+                linear-gradient(
+                    135deg,
+                    #7dd3fc,
+                    #a78bfa
+                );
 
             color: #050816;
         }
 
 
-        /* ---------------- STATS ---------------- */
+        /* =========================================
+           DISTRIBUTED NETWORK BACKGROUND
+        ========================================= */
+
+        .network-bg {
+            position: absolute;
+
+            right: -35px;
+            top: 55px;
+
+            width: 49%;
+            height: 72%;
+
+            z-index: 0;
+
+            pointer-events: none;
+
+            opacity: 0.40;
+        }
+
+        .network-bg svg {
+            width: 100%;
+            height: 100%;
+            overflow: visible;
+        }
+
+        .network-line {
+            stroke: url(#networkGradient);
+            stroke-width: 1;
+            opacity: 0.32;
+        }
+
+        .network-line-soft {
+            stroke: #38bdf8;
+            stroke-width: 0.7;
+
+            stroke-dasharray: 5 8;
+
+            opacity: 0.16;
+        }
+
+        .network-node {
+            fill: #38bdf8;
+            opacity: 0.70;
+        }
+
+        .network-node-purple {
+            fill: #a78bfa;
+            opacity: 0.72;
+        }
+
+        .network-glow {
+            fill: #38bdf8;
+            opacity: 0.07;
+        }
+
+        .network-glow-purple {
+            fill: #a78bfa;
+            opacity: 0.08;
+        }
+
+
+        /* =========================================
+           ENGINEERING STATS
+        ========================================= */
 
         .stats {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
+
             gap: 14px;
-            margin-top: -30px;
-            margin-bottom: 70px;
+
+            margin-top: -15px;
+            margin-bottom: 65px;
         }
 
         .stat {
             padding: 22px;
 
             background: rgba(15, 23, 42, 0.52);
+
             border: 1px solid var(--border);
             border-radius: 12px;
 
@@ -277,76 +373,96 @@
             font-size: 28px;
             font-weight: 700;
 
-            background: linear-gradient(
-                90deg,
-                var(--blue),
-                var(--purple)
-            );
+            background:
+                linear-gradient(
+                    90deg,
+                    var(--blue),
+                    var(--purple)
+                );
 
             -webkit-background-clip: text;
             background-clip: text;
+
             color: transparent;
         }
 
         .stat-label {
             color: var(--muted-2);
-            font-size: 12px;
+
+            font-size: 11px;
+
             text-transform: uppercase;
             letter-spacing: 1px;
         }
 
 
-        /* ---------------- GENERAL SECTIONS ---------------- */
+        /* =========================================
+           GENERAL SECTIONS
+        ========================================= */
 
         section {
-            padding: 95px 0;
+            padding: 90px 0;
         }
 
         .section-heading {
-            margin-bottom: 42px;
+            margin-bottom: 40px;
         }
 
         .section-label {
             color: var(--blue);
+
             font-family: "Courier New", monospace;
             font-size: 13px;
+
             margin-bottom: 7px;
         }
 
         .section-heading h2 {
             color: var(--text);
-            font-size: 35px;
+
+            font-size: 34px;
+
             letter-spacing: -1px;
         }
 
         .section-heading p {
-            max-width: 600px;
+            max-width: 650px;
+
             margin-top: 8px;
         }
 
 
-        /* ---------------- GLASS ---------------- */
+        /* =========================================
+           GLASS STYLE
+        ========================================= */
 
         .glass {
-            background: linear-gradient(
-                135deg,
-                rgba(17,24,39,0.68),
-                rgba(15,23,42,0.40)
-            );
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(17, 24, 39, 0.68),
+                    rgba(15, 23, 42, 0.40)
+                );
 
             border: 1px solid var(--border);
+
             border-radius: 16px;
 
             backdrop-filter: blur(16px);
+
             -webkit-backdrop-filter: blur(16px);
         }
 
 
-        /* ---------------- ABOUT ---------------- */
+        /* =========================================
+           ABOUT
+        ========================================= */
 
         .about-grid {
             display: grid;
+
             grid-template-columns: 1.5fr 0.85fr;
+
             gap: 22px;
         }
 
@@ -364,60 +480,79 @@
 
         .quick-info h3 {
             color: var(--text);
+
             margin-bottom: 20px;
+
             font-size: 17px;
         }
 
         .terminal-line {
             font-family: "Courier New", monospace;
+
             font-size: 13px;
+
             margin-bottom: 13px;
         }
 
         .prompt {
             color: var(--blue);
+
             margin-right: 7px;
         }
 
 
-        /* ---------------- EXPERIENCE ---------------- */
+        /* =========================================
+           EXPERIENCE
+        ========================================= */
 
         .experience {
             padding: 36px;
+
             position: relative;
+
             overflow: hidden;
         }
 
         .experience::before {
             content: "";
+
             position: absolute;
-            width: 250px;
-            height: 250px;
+
+            width: 260px;
+            height: 260px;
+
             right: -100px;
             top: -100px;
 
-            background: radial-gradient(
-                circle,
-                rgba(56,189,248,0.10),
-                transparent 65%
-            );
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(56, 189, 248, 0.10),
+                    transparent 65%
+                );
         }
 
         .experience-top {
             display: flex;
+
             justify-content: space-between;
+
             gap: 25px;
+
             margin-bottom: 25px;
         }
 
         .experience h3 {
             color: var(--text);
+
             font-size: 25px;
         }
 
         .company {
             color: #c4b5fd;
+
             margin-top: 3px;
+
             font-size: 16px;
         }
 
@@ -426,23 +561,28 @@
 
             padding: 6px 11px;
 
-            border: 1px solid rgba(56,189,248,0.25);
+            border: 1px solid rgba(56, 189, 248, 0.25);
+
             border-radius: 50px;
 
             color: var(--blue);
-            background: rgba(56,189,248,0.05);
+
+            background: rgba(56, 189, 248, 0.05);
 
             font-family: monospace;
+
             font-size: 12px;
         }
 
         .experience ul {
             padding-left: 20px;
-            max-width: 930px;
+
+            max-width: 940px;
         }
 
         .experience li {
             margin-bottom: 12px;
+
             padding-left: 4px;
         }
 
@@ -451,10 +591,13 @@
         }
 
 
-        /* ---------------- PROJECTS ---------------- */
+        /* =========================================
+           PROJECTS
+        ========================================= */
 
         .projects {
             display: grid;
+
             gap: 24px;
         }
 
@@ -462,10 +605,13 @@
             padding: 36px;
 
             display: grid;
+
             grid-template-columns: 100px 1fr;
+
             gap: 20px;
 
             position: relative;
+
             overflow: hidden;
 
             transition: 0.25s ease;
@@ -473,11 +619,13 @@
 
         .project:hover {
             transform: translateY(-4px);
-            border-color: rgba(129,140,248,0.35);
+
+            border-color: rgba(129, 140, 248, 0.35);
         }
 
         .project::after {
             content: "";
+
             position: absolute;
 
             width: 250px;
@@ -486,40 +634,52 @@
             right: -130px;
             bottom: -150px;
 
-            background: radial-gradient(
-                circle,
-                rgba(139,92,246,0.12),
-                transparent 65%
-            );
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(139, 92, 246, 0.12),
+                    transparent 65%
+                );
         }
 
         .project-number {
             font-family: "Courier New", monospace;
+
             color: var(--blue);
+
             font-size: 13px;
+
             letter-spacing: 1px;
         }
 
         .project-content {
-            max-width: 780px;
+            max-width: 800px;
+
             position: relative;
+
             z-index: 2;
         }
 
         .project h3 {
             color: var(--text);
+
             font-size: 26px;
-            margin-bottom: 12px;
+
+            margin-bottom: 13px;
         }
 
         .project p {
-            margin-bottom: 20px;
+            margin-bottom: 16px;
         }
 
         .tech-stack {
             display: flex;
+
             flex-wrap: wrap;
+
             gap: 8px;
+
+            margin-top: 21px;
             margin-bottom: 20px;
         }
 
@@ -528,17 +688,22 @@
 
             border-radius: 50px;
 
-            background: rgba(56,189,248,0.06);
-            border: 1px solid rgba(56,189,248,0.13);
+            background: rgba(56, 189, 248, 0.06);
+
+            border: 1px solid rgba(56, 189, 248, 0.13);
 
             color: #bae6fd;
+
             font-family: monospace;
+
             font-size: 11px;
         }
 
         .project-link {
             color: #c4b5fd;
+
             text-decoration: none;
+
             font-size: 14px;
         }
 
@@ -547,11 +712,15 @@
         }
 
 
-        /* ---------------- SKILLS ---------------- */
+        /* =========================================
+           SKILLS
+        ========================================= */
 
         .skill-grid {
             display: grid;
+
             grid-template-columns: repeat(3, 1fr);
+
             gap: 18px;
         }
 
@@ -561,34 +730,44 @@
 
         .skill-card h3 {
             color: var(--text);
+
             font-size: 16px;
+
             margin-bottom: 18px;
         }
 
         .skill-list {
             display: flex;
+
             flex-wrap: wrap;
+
             gap: 8px;
         }
 
         .skill {
             font-family: monospace;
+
             font-size: 12px;
 
             padding: 7px 10px;
 
             border: 1px solid var(--border);
+
             border-radius: 6px;
 
-            background: rgba(255,255,255,0.02);
+            background: rgba(255, 255, 255, 0.02);
         }
 
 
-        /* ---------------- EDUCATION ---------------- */
+        /* =========================================
+           EDUCATION
+        ========================================= */
 
         .education-grid {
             display: grid;
+
             grid-template-columns: repeat(3, 1fr);
+
             gap: 18px;
         }
 
@@ -598,16 +777,22 @@
 
         .degree-label {
             color: var(--purple);
+
             font-family: monospace;
+
             font-size: 11px;
+
             margin-bottom: 10px;
         }
 
         .education-card h3 {
             color: var(--text);
+
             font-size: 18px;
+
             line-height: 1.4;
-            margin-bottom: 10px;
+
+            margin-bottom: 12px;
         }
 
         .education-card p {
@@ -615,25 +800,35 @@
         }
 
 
-        /* ---------------- CONTACT ---------------- */
+        /* =========================================
+           CONTACT
+        ========================================= */
 
         .contact {
             text-align: center;
+
             max-width: 730px;
+
             margin: auto;
-            padding: 120px 0;
+
+            padding: 115px 0;
         }
 
         .contact-label {
             color: var(--blue);
+
             font-family: monospace;
+
             font-size: 13px;
+
             margin-bottom: 10px;
         }
 
         .contact h2 {
             color: var(--text);
+
             font-size: clamp(38px, 6vw, 55px);
+
             margin-bottom: 17px;
         }
 
@@ -642,20 +837,28 @@
         }
 
 
-        /* ---------------- FOOTER ---------------- */
+        /* =========================================
+           FOOTER
+        ========================================= */
 
         footer {
             border-top: 1px solid var(--border);
+
             text-align: center;
+
             padding: 25px;
 
             color: var(--muted-2);
+
             font-family: monospace;
+
             font-size: 11px;
         }
 
 
-        /* ---------------- MOBILE ---------------- */
+        /* =========================================
+           RESPONSIVE
+        ========================================= */
 
         @media (max-width: 850px) {
 
@@ -663,8 +866,17 @@
                 display: none;
             }
 
+            .network-bg {
+                opacity: 0.15;
+
+                width: 80%;
+
+                right: -40%;
+            }
+
             .stats {
                 grid-template-columns: repeat(2, 1fr);
+
                 margin-top: 0;
             }
 
@@ -688,6 +900,7 @@
                 flex-direction: column;
             }
         }
+
 
         @media (max-width: 520px) {
 
@@ -724,7 +937,9 @@
 <div class="container">
 
 
-    <!-- NAVIGATION -->
+    <!-- =========================================
+         NAVIGATION
+    ========================================== -->
 
     <nav>
 
@@ -733,20 +948,232 @@
         </div>
 
         <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#contact">Contact</a></li>
+
+            <li>
+                <a href="#about">About</a>
+            </li>
+
+            <li>
+                <a href="#experience">Experience</a>
+            </li>
+
+            <li>
+                <a href="#projects">Projects</a>
+            </li>
+
+            <li>
+                <a href="#skills">Skills</a>
+            </li>
+
+            <li>
+                <a href="#education">Education</a>
+            </li>
+
+            <li>
+                <a href="#contact">Contact</a>
+            </li>
+
         </ul>
 
     </nav>
 
 
-    <!-- INTRO -->
+
+    <!-- =========================================
+         INTRO
+    ========================================== -->
 
     <div class="intro">
+
+
+        <!-- DISTRIBUTED SYSTEM NETWORK -->
+
+        <div class="network-bg" aria-hidden="true">
+
+            <svg viewBox="0 0 600 520">
+
+                <defs>
+
+                    <linearGradient
+                        id="networkGradient"
+                        x1="0%"
+                        y1="0%"
+                        x2="100%"
+                        y2="100%">
+
+                        <stop
+                            offset="0%"
+                            stop-color="#38bdf8" />
+
+                        <stop
+                            offset="100%"
+                            stop-color="#a78bfa" />
+
+                    </linearGradient>
+
+                </defs>
+
+
+                <!-- GLOWS -->
+
+                <circle
+                    class="network-glow"
+                    cx="350"
+                    cy="210"
+                    r="105" />
+
+                <circle
+                    class="network-glow-purple"
+                    cx="490"
+                    cy="350"
+                    r="125" />
+
+
+                <!-- CONNECTIONS -->
+
+                <line
+                    class="network-line"
+                    x1="120"
+                    y1="150"
+                    x2="270"
+                    y2="90" />
+
+                <line
+                    class="network-line"
+                    x1="270"
+                    y1="90"
+                    x2="400"
+                    y2="165" />
+
+                <line
+                    class="network-line"
+                    x1="400"
+                    y1="165"
+                    x2="525"
+                    y2="110" />
+
+                <line
+                    class="network-line"
+                    x1="120"
+                    y1="150"
+                    x2="220"
+                    y2="275" />
+
+                <line
+                    class="network-line"
+                    x1="220"
+                    y1="275"
+                    x2="400"
+                    y2="165" />
+
+                <line
+                    class="network-line"
+                    x1="220"
+                    y1="275"
+                    x2="350"
+                    y2="365" />
+
+                <line
+                    class="network-line"
+                    x1="350"
+                    y1="365"
+                    x2="490"
+                    y2="300" />
+
+                <line
+                    class="network-line"
+                    x1="490"
+                    y1="300"
+                    x2="525"
+                    y2="110" />
+
+                <line
+                    class="network-line"
+                    x1="350"
+                    y1="365"
+                    x2="465"
+                    y2="440" />
+
+
+                <!-- SECONDARY DATA PATHS -->
+
+                <line
+                    class="network-line-soft"
+                    x1="270"
+                    y1="90"
+                    x2="350"
+                    y2="365" />
+
+                <line
+                    class="network-line-soft"
+                    x1="120"
+                    y1="150"
+                    x2="490"
+                    y2="300" />
+
+                <line
+                    class="network-line-soft"
+                    x1="220"
+                    y1="275"
+                    x2="525"
+                    y2="110" />
+
+
+                <!-- NODES -->
+
+                <circle
+                    class="network-node"
+                    cx="120"
+                    cy="150"
+                    r="4" />
+
+                <circle
+                    class="network-node-purple"
+                    cx="270"
+                    cy="90"
+                    r="5" />
+
+                <circle
+                    class="network-node"
+                    cx="400"
+                    cy="165"
+                    r="6" />
+
+                <circle
+                    class="network-node-purple"
+                    cx="525"
+                    cy="110"
+                    r="4" />
+
+                <circle
+                    class="network-node"
+                    cx="220"
+                    cy="275"
+                    r="5" />
+
+                <circle
+                    class="network-node-purple"
+                    cx="350"
+                    cy="365"
+                    r="6" />
+
+                <circle
+                    class="network-node"
+                    cx="490"
+                    cy="300"
+                    r="5" />
+
+                <circle
+                    class="network-node-purple"
+                    cx="465"
+                    cy="440"
+                    r="4" />
+
+            </svg>
+
+        </div>
+
+
 
         <div class="intro-content">
 
@@ -754,19 +1181,22 @@
                 Hello, I'm Shraoshree.
             </div>
 
+
             <h1>
                 Backend Software Engineer
             </h1>
+
 
             <h2>
                 Building reliable systems at scale.
             </h2>
 
+
             <p class="intro-description">
 
-                Software engineer with 4+ years of experience building
-                and supporting production backend systems and
-                large-scale data-processing applications using
+                Software engineer with 4+ years of experience
+                building and supporting production backend systems
+                and large-scale data-processing applications using
 
                 <span class="highlight">
                     Python, C++, SQL, and Linux.
@@ -784,21 +1214,29 @@
                 <a
                     class="button button-primary"
                     href="#projects">
+
                     View My Work
+
                 </a>
+
 
                 <a
                     class="button"
                     href="https://github.com/shraoshree"
                     target="_blank">
+
                     GitHub
+
                 </a>
+
 
                 <a
                     class="button"
                     href="https://www.linkedin.com/in/shraoshree-ghosh/"
                     target="_blank">
+
                     LinkedIn
+
                 </a>
 
             </div>
@@ -809,35 +1247,70 @@
 
 
 
-    <!-- ENGINEERING STATS -->
+    <!-- =========================================
+         ENGINEERING STATS
+    ========================================== -->
 
     <div class="stats">
 
         <div class="stat">
-            <span class="stat-number">4+</span>
-            <span class="stat-label">Years Experience</span>
+
+            <span class="stat-number">
+                4+
+            </span>
+
+            <span class="stat-label">
+                Years Experience
+            </span>
+
         </div>
 
-        <div class="stat">
-            <span class="stat-number">~8M</span>
-            <span class="stat-label">Records / Day</span>
-        </div>
 
         <div class="stat">
-            <span class="stat-number">35%</span>
-            <span class="stat-label">Performance Gain</span>
+
+            <span class="stat-number">
+                ~8M
+            </span>
+
+            <span class="stat-label">
+                Records / Day
+            </span>
+
         </div>
 
+
         <div class="stat">
-            <span class="stat-number">50+</span>
-            <span class="stat-label">Production RCAs</span>
+
+            <span class="stat-number">
+                35%
+            </span>
+
+            <span class="stat-label">
+                Performance Gain
+            </span>
+
+        </div>
+
+
+        <div class="stat">
+
+            <span class="stat-number">
+                50+
+            </span>
+
+            <span class="stat-label">
+                Production RCAs
+            </span>
+
         </div>
 
     </div>
 
 
 
-    <!-- ABOUT -->
+    <!-- =========================================
+         ABOUT
+    ========================================== -->
 
     <section id="about">
 
@@ -856,19 +1329,21 @@
 
         <div class="about-grid">
 
+
             <div class="about-text glass">
 
                 <p>
-                    I'm a backend software engineer with more than four
-                    years of professional experience working on
-                    large-scale production systems in the telecom domain.
+                    I'm a backend software engineer with more than
+                    four years of professional experience working
+                    on large-scale production systems in the
+                    telecom domain.
                 </p>
 
                 <p>
-                    My experience spans backend development, high-volume
-                    data processing, SQL optimization, REST APIs,
-                    production debugging, CI/CD, incident investigation,
-                    and root-cause analysis.
+                    My experience spans backend development,
+                    high-volume data processing, SQL optimization,
+                    REST APIs, production debugging, CI/CD,
+                    incident investigation, and root-cause analysis.
                 </p>
 
                 <p>
@@ -883,7 +1358,9 @@
 
             <div class="quick-info glass">
 
-                <h3>Engineering Profile</h3>
+                <h3>
+                    Engineering Profile
+                </h3>
 
                 <div class="terminal-line">
                     <span class="prompt">&gt;</span>
@@ -918,7 +1395,9 @@
 
 
 
-    <!-- EXPERIENCE -->
+    <!-- =========================================
+         EXPERIENCE
+    ========================================== -->
 
     <section id="experience">
 
@@ -937,6 +1416,7 @@
 
         <div class="experience glass">
 
+
             <div class="experience-top">
 
                 <div>
@@ -950,6 +1430,7 @@
                     </div>
 
                 </div>
+
 
                 <div class="experience-tag">
                     Backend • Telecom Systems
@@ -968,45 +1449,49 @@
                 </li>
 
                 <li>
-                    Developed backend workflows using Python, C++, SQL,
-                    and Linux across data processing, business logic,
-                    database operations, and production services.
+                    Developed backend workflows using Python, C++,
+                    SQL, and Linux across data processing,
+                    business logic, database operations, and
+                    production services.
                 </li>
 
                 <li>
-                    Improved application and database performance by
-                    approximately 35% through profiling, SQL query
-                    optimization, and analysis of production bottlenecks.
+                    Improved application and database performance
+                    by approximately 35% through profiling,
+                    SQL query optimization, and analysis of
+                    production bottlenecks.
                 </li>
 
                 <li>
                     Investigated complex production incidents and
-                    completed 50+ root-cause analyses across application,
-                    database, and data-processing failures.
+                    completed 50+ root-cause analyses across
+                    application, database, and data-processing
+                    failures.
                 </li>
 
                 <li>
                     Built and maintained 100+ production workflows
-                    supporting high-volume telecom data processing and
-                    operational requirements.
+                    supporting high-volume telecom data processing
+                    and operational requirements.
                 </li>
 
                 <li>
-                    Contributed to 10+ major production releases across
-                    development, testing, CI/CD, deployment, validation,
-                    and post-release monitoring.
+                    Contributed to 10+ major production releases
+                    across development, testing, CI/CD, deployment,
+                    validation, and post-release monitoring.
                 </li>
 
                 <li>
-                    Diagnosed reliability, concurrency, and performance
-                    issues in production systems and implemented fixes
-                    while minimizing downstream impact.
+                    Diagnosed reliability, concurrency, and
+                    performance issues in production systems and
+                    implemented fixes while minimizing downstream
+                    impact.
                 </li>
 
                 <li>
-                    Collaborated across engineering and operations teams
-                    to troubleshoot incidents, validate fixes, and
-                    improve production stability.
+                    Collaborated across engineering and operations
+                    teams to troubleshoot incidents, validate fixes,
+                    and improve production stability.
                 </li>
 
             </ul>
@@ -1017,7 +1502,9 @@
 
 
 
-    <!-- PROJECTS -->
+    <!-- =========================================
+         PROJECTS
+    ========================================== -->
 
     <section id="projects">
 
@@ -1032,8 +1519,9 @@
             </h2>
 
             <p>
-                Projects focused on backend architecture, automation,
-                data processing, reliability, and scalable systems.
+                Projects focused on backend architecture,
+                automation, data processing, reliability,
+                and scalable systems.
             </p>
 
         </div>
@@ -1057,31 +1545,48 @@
                         AI Job Assistant
                     </h3>
 
+
                     <p>
-                        A backend-focused job intelligence system that
-                        collects software engineering jobs from multiple
-                        sources, removes duplicates, applies eligibility
-                        filters, analyzes technical requirements, scores
+                        A backend-focused job intelligence system
+                        that collects software engineering jobs
+                        from multiple sources, removes duplicates,
+                        applies eligibility filters, analyzes
+                        technical requirements, scores
                         resume-to-job fit, and produces
                         Apply, Maybe, or Skip recommendations.
                     </p>
 
+
                     <p>
-                        The system is being designed around modular job
-                        collectors, automated scoring, specialization
-                        detection, skill matching, application tracking,
-                        and intelligent analysis while keeping the
-                        architecture practical and cost-efficient.
+                        The system supports automated job scoring,
+                        technical skill matching, specialization
+                        detection, and application-focused analysis
+                        to prioritize opportunities that align
+                        closely with a candidate's background.
+                    </p>
+
+
+                    <p>
+                        Designed an automated workflow that brings
+                        together job collection, filtering,
+                        resume matching, and relevance scoring,
+                        helping identify high-fit opportunities
+                        while reducing repetitive manual job search.
                     </p>
 
 
                     <div class="tech-stack">
 
                         <span class="tech">Python</span>
+
                         <span class="tech">PostgreSQL</span>
+
                         <span class="tech">Job Collectors</span>
+
                         <span class="tech">Matching Engine</span>
+
                         <span class="tech">Automation</span>
+
                         <span class="tech">Backend Architecture</span>
 
                     </div>
@@ -1091,7 +1596,9 @@
                         class="project-link"
                         href="https://github.com/shraoshree"
                         target="_blank">
+
                         View on GitHub →
+
                     </a>
 
                 </div>
@@ -1115,6 +1622,7 @@
                         Scalable URL Shortener
                     </h3>
 
+
                     <p>
                         Designed and built a backend URL shortening
                         service using FastAPI and PostgreSQL with
@@ -1122,6 +1630,7 @@
                         persistent storage, and scalable redirect
                         handling.
                     </p>
+
 
                     <p>
                         Added Redis caching to reduce database reads,
@@ -1132,13 +1641,27 @@
                     </p>
 
 
+                    <p>
+                        Designed the service with production
+                        scalability in mind, including horizontal
+                        scaling, stateless API servers, database
+                        indexing, cache-first reads, and strategies
+                        for handling high-volume redirect traffic.
+                    </p>
+
+
                     <div class="tech-stack">
 
                         <span class="tech">Python</span>
+
                         <span class="tech">FastAPI</span>
+
                         <span class="tech">PostgreSQL</span>
+
                         <span class="tech">Redis</span>
+
                         <span class="tech">Docker</span>
+
                         <span class="tech">REST API</span>
 
                     </div>
@@ -1148,7 +1671,9 @@
                         class="project-link"
                         href="https://github.com/shraoshree"
                         target="_blank">
+
                         View on GitHub →
+
                     </a>
 
                 </div>
@@ -1161,7 +1686,9 @@
 
 
 
-    <!-- SKILLS -->
+    <!-- =========================================
+         TECHNICAL SKILLS
+    ========================================== -->
 
     <section id="skills">
 
@@ -1172,7 +1699,7 @@
             </div>
 
             <h2>
-                Technologies I work with.
+                Technologies and fundamentals I work with.
             </h2>
 
         </div>
@@ -1181,51 +1708,111 @@
         <div class="skill-grid">
 
 
+            <!-- LANGUAGES -->
+
             <div class="skill-card glass">
 
-                <h3>Languages</h3>
+                <h3>
+                    Languages
+                </h3>
 
                 <div class="skill-list">
 
-                    <span class="skill">Python</span>
-                    <span class="skill">C++</span>
-                    <span class="skill">SQL</span>
+                    <span class="skill">
+                        Python
+                    </span>
+
+                    <span class="skill">
+                        C++
+                    </span>
+
+                    <span class="skill">
+                        SQL
+                    </span>
 
                 </div>
 
             </div>
 
 
+
+            <!-- BACKEND -->
+
             <div class="skill-card glass">
 
-                <h3>Backend & Data</h3>
+                <h3>
+                    Backend & Data
+                </h3>
 
                 <div class="skill-list">
 
-                    <span class="skill">FastAPI</span>
-                    <span class="skill">REST APIs</span>
-                    <span class="skill">PostgreSQL</span>
-                    <span class="skill">Redis</span>
-                    <span class="skill">ETL</span>
-                    <span class="skill">Data Processing</span>
+                    <span class="skill">
+                        FastAPI
+                    </span>
+
+                    <span class="skill">
+                        REST APIs
+                    </span>
+
+                    <span class="skill">
+                        PostgreSQL
+                    </span>
+
+                    <span class="skill">
+                        Redis
+                    </span>
+
+                    <span class="skill">
+                        ETL
+                    </span>
+
+                    <span class="skill">
+                        Data Processing
+                    </span>
 
                 </div>
 
             </div>
 
 
+
+            <!-- SYSTEMS -->
+
             <div class="skill-card glass">
 
-                <h3>Systems & Infrastructure</h3>
+                <h3>
+                    Systems & CS Fundamentals
+                </h3>
 
                 <div class="skill-list">
 
-                    <span class="skill">Linux</span>
-                    <span class="skill">Docker</span>
-                    <span class="skill">CI/CD</span>
-                    <span class="skill">Caching</span>
-                    <span class="skill">System Design</span>
-                    <span class="skill">Distributed Systems</span>
+                    <span class="skill">
+                        Data Structures & Algorithms
+                    </span>
+
+                    <span class="skill">
+                        System Design
+                    </span>
+
+                    <span class="skill">
+                        Distributed Systems
+                    </span>
+
+                    <span class="skill">
+                        Linux
+                    </span>
+
+                    <span class="skill">
+                        Docker
+                    </span>
+
+                    <span class="skill">
+                        CI/CD
+                    </span>
+
+                    <span class="skill">
+                        Caching
+                    </span>
 
                 </div>
 
@@ -1237,7 +1824,9 @@
 
 
 
-    <!-- EDUCATION -->
+    <!-- =========================================
+         EDUCATION
+    ========================================== -->
 
     <section id="education">
 
@@ -1257,6 +1846,8 @@
         <div class="education-grid">
 
 
+            <!-- TRINE -->
+
             <div class="education-card glass">
 
                 <div class="degree-label">
@@ -1268,15 +1859,14 @@
                 </h3>
 
                 <p>
-                    Trine University
-                </p>
-
-                <p>
-                    United States
+                    Trine University, USA
                 </p>
 
             </div>
 
+
+
+            <!-- VIT -->
 
             <div class="education-card glass">
 
@@ -1289,15 +1879,14 @@
                 </h3>
 
                 <p>
-                    VIT
-                </p>
-
-                <p>
-                    India
+                    VIT, India
                 </p>
 
             </div>
 
+
+
+            <!-- CCET -->
 
             <div class="education-card glass">
 
@@ -1310,11 +1899,7 @@
                 </h3>
 
                 <p>
-                    CCET
-                </p>
-
-                <p>
-                    India
+                    CCET, India
                 </p>
 
             </div>
@@ -1325,7 +1910,9 @@
 
 
 
-    <!-- CONTACT -->
+    <!-- =========================================
+         CONTACT
+    ========================================== -->
 
     <section id="contact">
 
@@ -1336,8 +1923,9 @@
             </div>
 
             <h2>
-                Let's build something meaningful.
+                Let's Connect.
             </h2>
+
 
             <p>
                 I'm interested in backend software engineering
@@ -1353,14 +1941,19 @@
                     class="button button-primary"
                     href="https://www.linkedin.com/in/shraoshree-ghosh/"
                     target="_blank">
+
                     Connect on LinkedIn
+
                 </a>
+
 
                 <a
                     class="button"
                     href="https://github.com/shraoshree"
                     target="_blank">
+
                     GitHub
+
                 </a>
 
             </div>
@@ -1379,4 +1972,5 @@
 
 
 </body>
+
 </html>
