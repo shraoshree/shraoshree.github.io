@@ -7,41 +7,96 @@
     <title>Shraoshree Ghosh | Backend Software Engineer</title>
 
     <style>
+        :root {
+            --bg: #070914;
+            --bg-soft: #0c1020;
+            --card: rgba(17, 24, 39, 0.58);
+            --card-strong: rgba(15, 23, 42, 0.78);
+            --border: rgba(148, 163, 184, 0.14);
+            --text: #f8fafc;
+            --muted: #94a3b8;
+            --muted-2: #64748b;
+            --blue: #38bdf8;
+            --purple: #a78bfa;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+        }
+
+        html {
             scroll-behavior: smooth;
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
-            background: #0b1120;
-            color: #cbd5e1;
+            font-family: Inter, -apple-system, BlinkMacSystemFont,
+                         "Segoe UI", Arial, sans-serif;
+            background:
+                radial-gradient(circle at 15% 15%,
+                    rgba(56, 189, 248, 0.12),
+                    transparent 28%),
+                radial-gradient(circle at 85% 22%,
+                    rgba(139, 92, 246, 0.13),
+                    transparent 28%),
+                radial-gradient(circle at 55% 80%,
+                    rgba(59, 130, 246, 0.08),
+                    transparent 30%),
+                var(--bg);
+            color: var(--muted);
             line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            opacity: 0.22;
+
+            background-image:
+                linear-gradient(
+                    rgba(255,255,255,0.025) 1px,
+                    transparent 1px
+                ),
+                linear-gradient(
+                    90deg,
+                    rgba(255,255,255,0.025) 1px,
+                    transparent 1px
+                );
+
+            background-size: 55px 55px;
+            mask-image: linear-gradient(
+                to bottom,
+                black,
+                transparent 85%
+            );
         }
 
         .container {
-            width: 88%;
-            max-width: 1100px;
+            width: min(1120px, 88%);
             margin: auto;
         }
 
-        /* NAVIGATION */
+
+        /* ---------------- NAVIGATION ---------------- */
 
         nav {
-            min-height: 85px;
+            height: 84px;
             display: flex;
-            align-items: center;
             justify-content: space-between;
-            border-bottom: 1px solid rgba(148, 163, 184, 0.12);
+            align-items: center;
+
+            border-bottom: 1px solid var(--border);
         }
 
-        .name {
-            font-size: 21px;
+        .brand {
+            color: var(--text);
+            font-size: 20px;
             font-weight: 700;
-            color: #f8fafc;
-            letter-spacing: 0.2px;
+            letter-spacing: -0.3px;
         }
 
         nav ul {
@@ -51,364 +106,641 @@
         }
 
         nav a {
+            color: var(--muted);
             text-decoration: none;
-            color: #94a3b8;
             font-size: 14px;
-            transition: 0.2s;
+            transition: 0.2s ease;
         }
 
         nav a:hover {
-            color: #38bdf8;
+            color: var(--blue);
         }
 
-        /* INTRO */
+
+        /* ---------------- INTRO ---------------- */
 
         .intro {
-            min-height: 78vh;
+            min-height: 77vh;
             display: flex;
             align-items: center;
             position: relative;
+            padding: 70px 0;
+        }
+
+        .intro::after {
+            content: "";
+            position: absolute;
+
+            width: 500px;
+            height: 500px;
+
+            right: -260px;
+            top: 70px;
+
+            background: radial-gradient(
+                circle,
+                rgba(139,92,246,0.18),
+                transparent 65%
+            );
+
+            filter: blur(10px);
+            pointer-events: none;
         }
 
         .intro-content {
-            max-width: 800px;
+            max-width: 870px;
+            position: relative;
+            z-index: 2;
         }
 
-        .intro-small {
-            color: #38bdf8;
-            font-family: monospace;
-            font-size: 17px;
-            margin-bottom: 15px;
+        .eyebrow {
+            font-family: "Courier New", monospace;
+            color: var(--blue);
+            font-size: 16px;
+            margin-bottom: 18px;
         }
 
         .intro h1 {
-            color: #f8fafc;
-            font-size: clamp(45px, 7vw, 75px);
-            line-height: 1.08;
-            margin-bottom: 10px;
+            color: var(--text);
+            font-size: clamp(48px, 7vw, 78px);
+            line-height: 1.03;
+            letter-spacing: -2.5px;
+            margin-bottom: 12px;
         }
 
         .intro h2 {
-            color: #94a3b8;
-            font-size: clamp(28px, 4vw, 43px);
+            font-size: clamp(29px, 4vw, 44px);
             line-height: 1.2;
-            margin-bottom: 25px;
+
+            background: linear-gradient(
+                90deg,
+                #cbd5e1,
+                #38bdf8,
+                #a78bfa
+            );
+
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+
+            margin-bottom: 26px;
         }
 
         .intro-description {
-            max-width: 690px;
+            max-width: 720px;
             font-size: 17px;
-            color: #94a3b8;
+            color: var(--muted);
         }
 
         .highlight {
-            color: #38bdf8;
+            color: #c4b5fd;
         }
 
         .buttons {
-            margin-top: 35px;
             display: flex;
             flex-wrap: wrap;
             gap: 12px;
+            margin-top: 34px;
         }
 
         .button {
+            display: inline-block;
+
             padding: 11px 21px;
-            border: 1px solid #38bdf8;
-            border-radius: 6px;
-            color: #38bdf8;
+
+            border: 1px solid var(--border);
+            border-radius: 8px;
+
+            color: #dbeafe;
             text-decoration: none;
             font-size: 14px;
-            transition: 0.2s;
+
+            background: rgba(255,255,255,0.025);
+            backdrop-filter: blur(12px);
+
+            transition: 0.22s ease;
         }
 
         .button:hover {
-            background: rgba(56, 189, 248, 0.1);
+            border-color: rgba(56,189,248,0.55);
             transform: translateY(-2px);
+            background: rgba(56,189,248,0.08);
         }
 
         .button-primary {
-            background: #38bdf8;
-            color: #0b1120;
-            font-weight: 600;
+            border-color: transparent;
+
+            background: linear-gradient(
+                135deg,
+                #38bdf8,
+                #818cf8
+            );
+
+            color: #050816;
+            font-weight: 700;
         }
 
         .button-primary:hover {
-            background: #7dd3fc;
+            background: linear-gradient(
+                135deg,
+                #7dd3fc,
+                #a78bfa
+            );
+
+            color: #050816;
         }
 
-        /* SECTIONS */
+
+        /* ---------------- STATS ---------------- */
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 14px;
+            margin-top: -30px;
+            margin-bottom: 70px;
+        }
+
+        .stat {
+            padding: 22px;
+
+            background: rgba(15, 23, 42, 0.52);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+
+            backdrop-filter: blur(15px);
+        }
+
+        .stat-number {
+            display: block;
+
+            font-size: 28px;
+            font-weight: 700;
+
+            background: linear-gradient(
+                90deg,
+                var(--blue),
+                var(--purple)
+            );
+
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .stat-label {
+            color: var(--muted-2);
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+
+        /* ---------------- GENERAL SECTIONS ---------------- */
 
         section {
             padding: 95px 0;
         }
 
-        .section-title {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            color: #f8fafc;
-            font-size: 29px;
-            margin-bottom: 45px;
+        .section-heading {
+            margin-bottom: 42px;
         }
 
-        .section-number {
-            color: #38bdf8;
-            font-family: monospace;
-            font-size: 18px;
-            font-weight: normal;
+        .section-label {
+            color: var(--blue);
+            font-family: "Courier New", monospace;
+            font-size: 13px;
+            margin-bottom: 7px;
         }
 
-        .section-title::after {
-            content: "";
-            display: block;
-            height: 1px;
-            width: 220px;
-            background: #1e293b;
+        .section-heading h2 {
+            color: var(--text);
+            font-size: 35px;
+            letter-spacing: -1px;
         }
 
-        /* ABOUT */
+        .section-heading p {
+            max-width: 600px;
+            margin-top: 8px;
+        }
+
+
+        /* ---------------- GLASS ---------------- */
+
+        .glass {
+            background: linear-gradient(
+                135deg,
+                rgba(17,24,39,0.68),
+                rgba(15,23,42,0.40)
+            );
+
+            border: 1px solid var(--border);
+            border-radius: 16px;
+
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+        }
+
+
+        /* ---------------- ABOUT ---------------- */
 
         .about-grid {
             display: grid;
-            grid-template-columns: 1.5fr 1fr;
-            gap: 70px;
-        }
-
-        .about-text p {
-            margin-bottom: 17px;
-        }
-
-        .quick-info {
-            background: #111827;
-            border: 1px solid #1e293b;
-            border-radius: 10px;
-            padding: 25px;
-        }
-
-        .quick-info p {
-            margin-bottom: 13px;
-            font-family: monospace;
-            font-size: 14px;
-        }
-
-        .quick-info span {
-            color: #38bdf8;
-        }
-
-        /* EXPERIENCE */
-
-        .experience-card {
-            border-left: 2px solid #38bdf8;
-            padding-left: 30px;
-            max-width: 850px;
-        }
-
-        .experience-card h3 {
-            color: #f8fafc;
-            font-size: 23px;
-        }
-
-        .company {
-            color: #38bdf8;
-            font-size: 17px;
-            margin-bottom: 4px;
-        }
-
-        .experience-meta {
-            color: #64748b;
-            font-family: monospace;
-            font-size: 13px;
-            margin-bottom: 20px;
-        }
-
-        .experience-card ul {
-            padding-left: 20px;
-        }
-
-        .experience-card li {
-            margin-bottom: 10px;
-        }
-
-        /* PROJECTS */
-
-        .projects {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: 1.5fr 0.85fr;
             gap: 22px;
         }
 
-        .project-card {
-            background: #111827;
-            border: 1px solid #1e293b;
-            border-radius: 10px;
-            padding: 30px;
-            transition: 0.25s;
-            display: flex;
-            flex-direction: column;
+        .about-text {
+            padding: 32px;
         }
 
-        .project-card:hover {
-            transform: translateY(-5px);
-            border-color: #334155;
+        .about-text p {
+            margin-bottom: 16px;
+        }
+
+        .quick-info {
+            padding: 30px;
+        }
+
+        .quick-info h3 {
+            color: var(--text);
+            margin-bottom: 20px;
+            font-size: 17px;
+        }
+
+        .terminal-line {
+            font-family: "Courier New", monospace;
+            font-size: 13px;
+            margin-bottom: 13px;
+        }
+
+        .prompt {
+            color: var(--blue);
+            margin-right: 7px;
+        }
+
+
+        /* ---------------- EXPERIENCE ---------------- */
+
+        .experience {
+            padding: 36px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .experience::before {
+            content: "";
+            position: absolute;
+            width: 250px;
+            height: 250px;
+            right: -100px;
+            top: -100px;
+
+            background: radial-gradient(
+                circle,
+                rgba(56,189,248,0.10),
+                transparent 65%
+            );
+        }
+
+        .experience-top {
+            display: flex;
+            justify-content: space-between;
+            gap: 25px;
+            margin-bottom: 25px;
+        }
+
+        .experience h3 {
+            color: var(--text);
+            font-size: 25px;
+        }
+
+        .company {
+            color: #c4b5fd;
+            margin-top: 3px;
+            font-size: 16px;
+        }
+
+        .experience-tag {
+            height: fit-content;
+
+            padding: 6px 11px;
+
+            border: 1px solid rgba(56,189,248,0.25);
+            border-radius: 50px;
+
+            color: var(--blue);
+            background: rgba(56,189,248,0.05);
+
+            font-family: monospace;
+            font-size: 12px;
+        }
+
+        .experience ul {
+            padding-left: 20px;
+            max-width: 930px;
+        }
+
+        .experience li {
+            margin-bottom: 12px;
+            padding-left: 4px;
+        }
+
+        .experience li::marker {
+            color: var(--blue);
+        }
+
+
+        /* ---------------- PROJECTS ---------------- */
+
+        .projects {
+            display: grid;
+            gap: 24px;
+        }
+
+        .project {
+            padding: 36px;
+
+            display: grid;
+            grid-template-columns: 100px 1fr;
+            gap: 20px;
+
+            position: relative;
+            overflow: hidden;
+
+            transition: 0.25s ease;
+        }
+
+        .project:hover {
+            transform: translateY(-4px);
+            border-color: rgba(129,140,248,0.35);
+        }
+
+        .project::after {
+            content: "";
+            position: absolute;
+
+            width: 250px;
+            height: 250px;
+
+            right: -130px;
+            bottom: -150px;
+
+            background: radial-gradient(
+                circle,
+                rgba(139,92,246,0.12),
+                transparent 65%
+            );
         }
 
         .project-number {
-            color: #38bdf8;
-            font-family: monospace;
-            margin-bottom: 18px;
+            font-family: "Courier New", monospace;
+            color: var(--blue);
+            font-size: 13px;
+            letter-spacing: 1px;
         }
 
-        .project-card h3 {
-            color: #f8fafc;
-            font-size: 23px;
+        .project-content {
+            max-width: 780px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .project h3 {
+            color: var(--text);
+            font-size: 26px;
             margin-bottom: 12px;
         }
 
-        .project-description {
-            flex-grow: 1;
-            margin-bottom: 22px;
-        }
-
-        .tech {
-            color: #64748b;
-            font-family: monospace;
-            font-size: 13px;
+        .project p {
             margin-bottom: 20px;
         }
 
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        .tech {
+            padding: 5px 10px;
+
+            border-radius: 50px;
+
+            background: rgba(56,189,248,0.06);
+            border: 1px solid rgba(56,189,248,0.13);
+
+            color: #bae6fd;
+            font-family: monospace;
+            font-size: 11px;
+        }
+
         .project-link {
-            color: #38bdf8;
+            color: #c4b5fd;
             text-decoration: none;
             font-size: 14px;
         }
 
         .project-link:hover {
-            text-decoration: underline;
+            color: var(--blue);
         }
 
-        /* SKILLS */
 
-        .skill-group {
-            margin-bottom: 27px;
+        /* ---------------- SKILLS ---------------- */
+
+        .skill-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
         }
 
-        .skill-group h3 {
-            color: #f8fafc;
+        .skill-card {
+            padding: 27px;
+        }
+
+        .skill-card h3 {
+            color: var(--text);
             font-size: 16px;
-            margin-bottom: 12px;
+            margin-bottom: 18px;
         }
 
-        .skills {
+        .skill-list {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
+            gap: 8px;
         }
 
         .skill {
-            padding: 8px 14px;
-            background: #111827;
-            border: 1px solid #1e293b;
-            border-radius: 5px;
             font-family: monospace;
-            font-size: 13px;
+            font-size: 12px;
+
+            padding: 7px 10px;
+
+            border: 1px solid var(--border);
+            border-radius: 6px;
+
+            background: rgba(255,255,255,0.02);
         }
 
-        /* EDUCATION */
+
+        /* ---------------- EDUCATION ---------------- */
+
+        .education-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
 
         .education-card {
-            background: #111827;
-            border: 1px solid #1e293b;
-            padding: 25px;
-            border-radius: 10px;
-            max-width: 700px;
+            padding: 27px;
+        }
+
+        .degree-label {
+            color: var(--purple);
+            font-family: monospace;
+            font-size: 11px;
+            margin-bottom: 10px;
         }
 
         .education-card h3 {
-            color: #f8fafc;
-            margin-bottom: 5px;
+            color: var(--text);
+            font-size: 18px;
+            line-height: 1.4;
+            margin-bottom: 10px;
         }
 
-        /* CONTACT */
+        .education-card p {
+            font-size: 14px;
+        }
+
+
+        /* ---------------- CONTACT ---------------- */
 
         .contact {
             text-align: center;
-            max-width: 650px;
+            max-width: 730px;
             margin: auto;
-            padding-bottom: 120px;
+            padding: 120px 0;
         }
 
-        .contact .section-title {
-            justify-content: center;
-        }
-
-        .contact .section-title::after {
-            display: none;
+        .contact-label {
+            color: var(--blue);
+            font-family: monospace;
+            font-size: 13px;
+            margin-bottom: 10px;
         }
 
         .contact h2 {
-            color: #f8fafc;
-            font-size: 40px;
-            margin-bottom: 15px;
+            color: var(--text);
+            font-size: clamp(38px, 6vw, 55px);
+            margin-bottom: 17px;
         }
 
-        .contact p {
-            margin-bottom: 30px;
+        .contact .buttons {
+            justify-content: center;
         }
+
+
+        /* ---------------- FOOTER ---------------- */
 
         footer {
+            border-top: 1px solid var(--border);
             text-align: center;
             padding: 25px;
-            border-top: 1px solid #1e293b;
-            color: #64748b;
+
+            color: var(--muted-2);
             font-family: monospace;
-            font-size: 12px;
+            font-size: 11px;
         }
 
-        /* MOBILE */
 
-        @media (max-width: 750px) {
+        /* ---------------- MOBILE ---------------- */
+
+        @media (max-width: 850px) {
 
             nav ul {
                 display: none;
             }
 
-            .intro {
-                min-height: 80vh;
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+                margin-top: 0;
             }
 
-            .about-grid,
-            .projects {
+            .about-grid {
                 grid-template-columns: 1fr;
             }
 
-            .section-title::after {
-                width: 80px;
+            .skill-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .education-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .project {
+                grid-template-columns: 1fr;
+            }
+
+            .experience-top {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 520px) {
+
+            .container {
+                width: 90%;
+            }
+
+            .intro h1 {
+                letter-spacing: -1.5px;
+            }
+
+            .stats {
+                grid-template-columns: 1fr 1fr;
             }
 
             section {
                 padding: 70px 0;
             }
+
+            .experience,
+            .project,
+            .about-text,
+            .quick-info {
+                padding: 24px;
+            }
         }
+
     </style>
 </head>
+
 
 <body>
 
 <div class="container">
 
+
     <!-- NAVIGATION -->
 
     <nav>
-        <div class="name">Shraoshree Ghosh</div>
+
+        <div class="brand">
+            Shraoshree Ghosh
+        </div>
 
         <ul>
             <li><a href="#about">About</a></li>
             <li><a href="#experience">Experience</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#skills">Skills</a></li>
+            <li><a href="#education">Education</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
+
     </nav>
 
 
@@ -418,36 +750,54 @@
 
         <div class="intro-content">
 
-            <div class="intro-small">Hello, I'm Shraoshree.</div>
+            <div class="eyebrow">
+                Hello, I'm Shraoshree.
+            </div>
 
-            <h1>Backend Software Engineer</h1>
+            <h1>
+                Backend Software Engineer
+            </h1>
 
-            <h2>I build reliable systems that scale.</h2>
+            <h2>
+                Building reliable systems at scale.
+            </h2>
 
             <p class="intro-description">
-                Software engineer with 4+ years of experience building and supporting
-                production backend systems using
-                <span class="highlight">Python, C++, SQL, and Linux</span>.
-                I enjoy solving problems around backend architecture, data processing,
-                performance, reliability, and distributed systems.
+
+                Software engineer with 4+ years of experience building
+                and supporting production backend systems and
+                large-scale data-processing applications using
+
+                <span class="highlight">
+                    Python, C++, SQL, and Linux.
+                </span>
+
+                I enjoy solving engineering problems around
+                performance, reliability, APIs, databases,
+                and distributed systems.
+
             </p>
+
 
             <div class="buttons">
 
-                <a class="button button-primary"
-                   href="#projects">
+                <a
+                    class="button button-primary"
+                    href="#projects">
                     View My Work
                 </a>
 
-                <a class="button"
-                   href="https://github.com/shraoshree"
-                   target="_blank">
+                <a
+                    class="button"
+                    href="https://github.com/shraoshree"
+                    target="_blank">
                     GitHub
                 </a>
 
-                <a class="button"
-                   href="https://www.linkedin.com/in/shraoshree-ghosh/"
-                   target="_blank">
+                <a
+                    class="button"
+                    href="https://www.linkedin.com/in/shraoshree-ghosh/"
+                    target="_blank">
                     LinkedIn
                 </a>
 
@@ -458,46 +808,107 @@
     </div>
 
 
+
+    <!-- ENGINEERING STATS -->
+
+    <div class="stats">
+
+        <div class="stat">
+            <span class="stat-number">4+</span>
+            <span class="stat-label">Years Experience</span>
+        </div>
+
+        <div class="stat">
+            <span class="stat-number">~8M</span>
+            <span class="stat-label">Records / Day</span>
+        </div>
+
+        <div class="stat">
+            <span class="stat-number">35%</span>
+            <span class="stat-label">Performance Gain</span>
+        </div>
+
+        <div class="stat">
+            <span class="stat-number">50+</span>
+            <span class="stat-label">Production RCAs</span>
+        </div>
+
+    </div>
+
+
+
     <!-- ABOUT -->
 
     <section id="about">
 
-        <h2 class="section-title">
-            <span class="section-number">01.</span>
-            About Me
-        </h2>
+        <div class="section-heading">
+
+            <div class="section-label">
+                01 / ABOUT
+            </div>
+
+            <h2>
+                Engineering systems that work in production.
+            </h2>
+
+        </div>
+
 
         <div class="about-grid">
 
-            <div class="about-text">
+            <div class="about-text glass">
 
                 <p>
-                    I'm a backend software engineer with more than four years of
-                    professional experience working on production systems in the
-                    telecom domain.
+                    I'm a backend software engineer with more than four
+                    years of professional experience working on
+                    large-scale production systems in the telecom domain.
                 </p>
 
                 <p>
-                    My work has involved large-scale data processing, backend
-                    development, SQL optimization, production debugging, REST APIs,
-                    CI/CD, incident investigation, and root-cause analysis.
+                    My experience spans backend development, high-volume
+                    data processing, SQL optimization, REST APIs,
+                    production debugging, CI/CD, incident investigation,
+                    and root-cause analysis.
                 </p>
 
                 <p>
-                    I particularly enjoy understanding how systems behave under
-                    scale and designing practical solutions around performance,
-                    reliability, caching, databases, APIs, and distributed systems.
+                    I enjoy understanding how systems behave under
+                    real-world load and solving problems around
+                    scalability, performance, reliability, caching,
+                    databases, APIs, and distributed systems.
                 </p>
 
             </div>
 
-            <div class="quick-info">
 
-                <p><span>&gt;</span> focus: Backend Engineering</p>
-                <p><span>&gt;</span> experience: 4+ years</p>
-                <p><span>&gt;</span> languages: Python, C++, SQL</p>
-                <p><span>&gt;</span> interests: Distributed Systems</p>
-                <p><span>&gt;</span> location: United States</p>
+            <div class="quick-info glass">
+
+                <h3>Engineering Profile</h3>
+
+                <div class="terminal-line">
+                    <span class="prompt">&gt;</span>
+                    Backend Engineering
+                </div>
+
+                <div class="terminal-line">
+                    <span class="prompt">&gt;</span>
+                    Python / C++ / SQL
+                </div>
+
+                <div class="terminal-line">
+                    <span class="prompt">&gt;</span>
+                    Production Systems
+                </div>
+
+                <div class="terminal-line">
+                    <span class="prompt">&gt;</span>
+                    Distributed Systems
+                </div>
+
+                <div class="terminal-line">
+                    <span class="prompt">&gt;</span>
+                    Performance & Reliability
+                </div>
 
             </div>
 
@@ -506,52 +917,98 @@
     </section>
 
 
+
     <!-- EXPERIENCE -->
 
     <section id="experience">
 
-        <h2 class="section-title">
-            <span class="section-number">02.</span>
-            Experience
-        </h2>
+        <div class="section-heading">
 
-        <div class="experience-card">
-
-            <h3>Software Engineer</h3>
-
-            <div class="company">
-                Tata Consultancy Services
+            <div class="section-label">
+                02 / EXPERIENCE
             </div>
 
-            <div class="experience-meta">
-                Backend Engineering • Telecom Systems
+            <h2>
+                Production engineering experience.
+            </h2>
+
+        </div>
+
+
+        <div class="experience glass">
+
+            <div class="experience-top">
+
+                <div>
+
+                    <h3>
+                        Software Engineer
+                    </h3>
+
+                    <div class="company">
+                        Tata Consultancy Services
+                    </div>
+
+                </div>
+
+                <div class="experience-tag">
+                    Backend • Telecom Systems
+                </div>
+
             </div>
+
 
             <ul>
+
                 <li>
-                    Built and supported backend and data-processing systems
-                    handling millions of telecom records per day.
+                    Built and maintained production backend and
+                    data-processing systems supporting large-scale
+                    telecom workloads and processing approximately
+                    8 million call detail records per day.
                 </li>
 
                 <li>
-                    Worked with Python, C++, SQL, and Linux across production
-                    development and troubleshooting workflows.
+                    Developed backend workflows using Python, C++, SQL,
+                    and Linux across data processing, business logic,
+                    database operations, and production services.
                 </li>
 
                 <li>
-                    Improved application and database performance through
-                    profiling, query optimization, and production analysis.
+                    Improved application and database performance by
+                    approximately 35% through profiling, SQL query
+                    optimization, and analysis of production bottlenecks.
                 </li>
 
                 <li>
-                    Investigated production incidents, performed root-cause
-                    analysis, and contributed to reliable production releases.
+                    Investigated complex production incidents and
+                    completed 50+ root-cause analyses across application,
+                    database, and data-processing failures.
                 </li>
 
                 <li>
-                    Worked across the software development lifecycle including
-                    development, testing, CI/CD, deployment, and production support.
+                    Built and maintained 100+ production workflows
+                    supporting high-volume telecom data processing and
+                    operational requirements.
                 </li>
+
+                <li>
+                    Contributed to 10+ major production releases across
+                    development, testing, CI/CD, deployment, validation,
+                    and post-release monitoring.
+                </li>
+
+                <li>
+                    Diagnosed reliability, concurrency, and performance
+                    issues in production systems and implemented fixes
+                    while minimizing downstream impact.
+                </li>
+
+                <li>
+                    Collaborated across engineering and operations teams
+                    to troubleshoot incidents, validate fixes, and
+                    improve production stability.
+                </li>
+
             </ul>
 
         </div>
@@ -559,183 +1016,354 @@
     </section>
 
 
+
     <!-- PROJECTS -->
 
     <section id="projects">
 
-        <h2 class="section-title">
-            <span class="section-number">03.</span>
-            Featured Projects
-        </h2>
+        <div class="section-heading">
+
+            <div class="section-label">
+                03 / SELECTED WORK
+            </div>
+
+            <h2>
+                Backend projects I'm building.
+            </h2>
+
+            <p>
+                Projects focused on backend architecture, automation,
+                data processing, reliability, and scalable systems.
+            </p>
+
+        </div>
+
 
         <div class="projects">
 
-            <!-- PROJECT 1 -->
 
-            <div class="project-card">
+            <!-- AI JOB ASSISTANT -->
 
-                <div class="project-number">PROJECT 01</div>
+            <div class="project glass">
 
-                <h3>AI Job Assistant</h3>
-
-                <p class="project-description">
-                    A backend-focused job intelligence system that collects
-                    software engineering jobs, removes duplicates, analyzes
-                    technical requirements, evaluates resume-to-job fit, and
-                    generates Apply, Maybe, or Skip recommendations.
-                </p>
-
-                <div class="tech">
-                    Python • PostgreSQL • Job APIs • Matching Engine
+                <div class="project-number">
+                    PROJECT 01
                 </div>
 
-                <a class="project-link"
-                   href="https://github.com/shraoshree"
-                   target="_blank">
-                    View on GitHub →
-                </a>
+
+                <div class="project-content">
+
+                    <h3>
+                        AI Job Assistant
+                    </h3>
+
+                    <p>
+                        A backend-focused job intelligence system that
+                        collects software engineering jobs from multiple
+                        sources, removes duplicates, applies eligibility
+                        filters, analyzes technical requirements, scores
+                        resume-to-job fit, and produces
+                        Apply, Maybe, or Skip recommendations.
+                    </p>
+
+                    <p>
+                        The system is being designed around modular job
+                        collectors, automated scoring, specialization
+                        detection, skill matching, application tracking,
+                        and intelligent analysis while keeping the
+                        architecture practical and cost-efficient.
+                    </p>
+
+
+                    <div class="tech-stack">
+
+                        <span class="tech">Python</span>
+                        <span class="tech">PostgreSQL</span>
+                        <span class="tech">Job Collectors</span>
+                        <span class="tech">Matching Engine</span>
+                        <span class="tech">Automation</span>
+                        <span class="tech">Backend Architecture</span>
+
+                    </div>
+
+
+                    <a
+                        class="project-link"
+                        href="https://github.com/shraoshree"
+                        target="_blank">
+                        View on GitHub →
+                    </a>
+
+                </div>
 
             </div>
 
 
-            <!-- PROJECT 2 -->
 
-            <div class="project-card">
+            <!-- URL SHORTENER -->
 
-                <div class="project-number">PROJECT 02</div>
+            <div class="project glass">
 
-                <h3>Scalable URL Shortener</h3>
-
-                <p class="project-description">
-                    Backend URL shortening service designed with persistent
-                    PostgreSQL storage, Redis caching, expiration support,
-                    rate limiting, and scalable redirect handling.
-                </p>
-
-                <div class="tech">
-                    Python • FastAPI • PostgreSQL • Redis • Docker
+                <div class="project-number">
+                    PROJECT 02
                 </div>
 
-                <a class="project-link"
-                   href="https://github.com/shraoshree"
-                   target="_blank">
-                    View on GitHub →
-                </a>
+
+                <div class="project-content">
+
+                    <h3>
+                        Scalable URL Shortener
+                    </h3>
+
+                    <p>
+                        Designed and built a backend URL shortening
+                        service using FastAPI and PostgreSQL with
+                        Base62 short-code generation, URL expiration,
+                        persistent storage, and scalable redirect
+                        handling.
+                    </p>
+
+                    <p>
+                        Added Redis caching to reduce database reads,
+                        cache invalidation behavior, rate limiting,
+                        Docker-based deployment, and backend design
+                        considerations around scalability and
+                        reliability.
+                    </p>
+
+
+                    <div class="tech-stack">
+
+                        <span class="tech">Python</span>
+                        <span class="tech">FastAPI</span>
+                        <span class="tech">PostgreSQL</span>
+                        <span class="tech">Redis</span>
+                        <span class="tech">Docker</span>
+                        <span class="tech">REST API</span>
+
+                    </div>
+
+
+                    <a
+                        class="project-link"
+                        href="https://github.com/shraoshree"
+                        target="_blank">
+                        View on GitHub →
+                    </a>
+
+                </div>
 
             </div>
 
         </div>
 
     </section>
+
 
 
     <!-- SKILLS -->
 
     <section id="skills">
 
-        <h2 class="section-title">
-            <span class="section-number">04.</span>
-            Technical Skills
-        </h2>
+        <div class="section-heading">
 
-        <div class="skill-group">
-
-            <h3>Languages</h3>
-
-            <div class="skills">
-                <span class="skill">Python</span>
-                <span class="skill">C++</span>
-                <span class="skill">SQL</span>
+            <div class="section-label">
+                04 / TECHNICAL SKILLS
             </div>
+
+            <h2>
+                Technologies I work with.
+            </h2>
 
         </div>
 
 
-        <div class="skill-group">
+        <div class="skill-grid">
 
-            <h3>Backend & Data</h3>
 
-            <div class="skills">
-                <span class="skill">FastAPI</span>
-                <span class="skill">REST APIs</span>
-                <span class="skill">PostgreSQL</span>
-                <span class="skill">Redis</span>
-                <span class="skill">ETL</span>
-                <span class="skill">Data Processing</span>
+            <div class="skill-card glass">
+
+                <h3>Languages</h3>
+
+                <div class="skill-list">
+
+                    <span class="skill">Python</span>
+                    <span class="skill">C++</span>
+                    <span class="skill">SQL</span>
+
+                </div>
+
             </div>
 
-        </div>
+
+            <div class="skill-card glass">
+
+                <h3>Backend & Data</h3>
+
+                <div class="skill-list">
+
+                    <span class="skill">FastAPI</span>
+                    <span class="skill">REST APIs</span>
+                    <span class="skill">PostgreSQL</span>
+                    <span class="skill">Redis</span>
+                    <span class="skill">ETL</span>
+                    <span class="skill">Data Processing</span>
+
+                </div>
+
+            </div>
 
 
-        <div class="skill-group">
+            <div class="skill-card glass">
 
-            <h3>Systems & Infrastructure</h3>
+                <h3>Systems & Infrastructure</h3>
 
-            <div class="skills">
-                <span class="skill">Linux</span>
-                <span class="skill">Docker</span>
-                <span class="skill">CI/CD</span>
-                <span class="skill">Caching</span>
-                <span class="skill">Distributed Systems</span>
-                <span class="skill">System Design</span>
+                <div class="skill-list">
+
+                    <span class="skill">Linux</span>
+                    <span class="skill">Docker</span>
+                    <span class="skill">CI/CD</span>
+                    <span class="skill">Caching</span>
+                    <span class="skill">System Design</span>
+                    <span class="skill">Distributed Systems</span>
+
+                </div>
+
             </div>
 
         </div>
 
     </section>
+
 
 
     <!-- EDUCATION -->
 
     <section id="education">
 
-        <h2 class="section-title">
-            <span class="section-number">05.</span>
-            Education
-        </h2>
+        <div class="section-heading">
 
-        <div class="education-card">
+            <div class="section-label">
+                05 / EDUCATION
+            </div>
 
-            <h3>Master of Science</h3>
+            <h2>
+                Academic background.
+            </h2>
 
-            <p>Business Analytics</p>
-            <p>Trine University • United States</p>
+        </div>
+
+
+        <div class="education-grid">
+
+
+            <div class="education-card glass">
+
+                <div class="degree-label">
+                    CURRENT
+                </div>
+
+                <h3>
+                    Master of Science in Business Analytics
+                </h3>
+
+                <p>
+                    Trine University
+                </p>
+
+                <p>
+                    United States
+                </p>
+
+            </div>
+
+
+            <div class="education-card glass">
+
+                <div class="degree-label">
+                    MASTER'S
+                </div>
+
+                <h3>
+                    Master of Science in Computer Science
+                </h3>
+
+                <p>
+                    VIT
+                </p>
+
+                <p>
+                    India
+                </p>
+
+            </div>
+
+
+            <div class="education-card glass">
+
+                <div class="degree-label">
+                    BACHELOR'S
+                </div>
+
+                <h3>
+                    Bachelor of Technology in Computer Science
+                </h3>
+
+                <p>
+                    CCET
+                </p>
+
+                <p>
+                    India
+                </p>
+
+            </div>
 
         </div>
 
     </section>
 
 
+
     <!-- CONTACT -->
 
-    <section id="contact" class="contact">
+    <section id="contact">
 
-        <h2 class="section-title">
-            <span class="section-number">06.</span>
-            What's Next?
-        </h2>
+        <div class="contact">
 
-        <h2>Let's Connect</h2>
+            <div class="contact-label">
+                06 / GET IN TOUCH
+            </div>
 
-        <p>
-            I'm interested in backend software engineering opportunities
-            where I can work on scalable systems, infrastructure,
-            distributed systems, and challenging engineering problems.
-        </p>
+            <h2>
+                Let's build something meaningful.
+            </h2>
 
-        <div class="buttons" style="justify-content:center;">
+            <p>
+                I'm interested in backend software engineering
+                opportunities where I can work on scalable systems,
+                infrastructure, distributed systems, and challenging
+                production engineering problems.
+            </p>
 
-            <a class="button"
-               href="https://www.linkedin.com/in/shraoshree-ghosh/"
-               target="_blank">
-                LinkedIn
-            </a>
 
-            <a class="button"
-               href="https://github.com/shraoshree"
-               target="_blank">
-                GitHub
-            </a>
+            <div class="buttons">
+
+                <a
+                    class="button button-primary"
+                    href="https://www.linkedin.com/in/shraoshree-ghosh/"
+                    target="_blank">
+                    Connect on LinkedIn
+                </a>
+
+                <a
+                    class="button"
+                    href="https://github.com/shraoshree"
+                    target="_blank">
+                    GitHub
+                </a>
+
+            </div>
 
         </div>
 
@@ -744,9 +1372,11 @@
 </div>
 
 
+
 <footer>
     Designed & built by Shraoshree Ghosh • 2026
 </footer>
+
 
 </body>
 </html>
