@@ -1484,6 +1484,11 @@ footer{border-top:1px solid rgba(157,191,215,.15)}
 @media(max-width:1000px) and (min-width:761px){.hero-network-art{opacity:.09!important;width:280px!important;max-width:30%!important}}
 @media(max-width:760px){.hero-network-art{display:none!important}.intro{background:radial-gradient(ellipse at 95% 20%,rgba(74,140,151,.055),transparent 50%)!important}}
 
+
+/* Restore the clean hero after removing decorative network graphic */
+.intro{display:block!important;min-height:auto!important;background:none!important}
+.intro-content{width:100%!important;max-width:790px!important}
+.hero-network-art{display:none!important}
 </style>
 
 </head>
@@ -1562,24 +1567,6 @@ footer{border-top:1px solid rgba(157,191,215,.15)}
 
     <div class="intro">
 
-
-        <div class="hero-network-art" aria-hidden="true">
-          <svg viewBox="0 0 460 460" xmlns="http://www.w3.org/2000/svg">
-            <defs><linearGradient id="netLine" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#83e7d7" stop-opacity=".65"/><stop offset="1" stop-color="#6d8bbd" stop-opacity=".3"/></linearGradient></defs>
-            <g stroke="url(#netLine)" stroke-width="1.5" fill="none">
-              <path d="M75 126 214 64 358 116 398 259 302 374 134 356 53 236Z"/>
-              <path d="M75 126 208 211 358 116M208 211 398 259M208 211 134 356M208 211 302 374M214 64 208 211M53 236 208 211"/>
-              <path d="M134 356 302 374M358 116 302 374" stroke-dasharray="4 9" opacity=".55"/>
-            </g>
-            <g fill="#091b23" stroke="#85e6d7" stroke-width="2">
-              <circle cx="75" cy="126" r="8"/><circle cx="214" cy="64" r="7"/><circle cx="358" cy="116" r="9"/><circle cx="398" cy="259" r="7"/><circle cx="302" cy="374" r="9"/><circle cx="134" cy="356" r="7"/><circle cx="53" cy="236" r="7"/><circle cx="208" cy="211" r="14"/>
-            </g>
-            <g fill="#9ff5e7"><circle cx="208" cy="211" r="5"/><circle cx="358" cy="116" r="3"/><circle cx="134" cy="356" r="3"/></g>
-            <g font-family="Inter,Segoe UI,Arial,sans-serif" font-size="11" letter-spacing="1.5" fill="#b7d7d6">
-              <text x="230" y="207">RELIABILITY</text><text x="228" y="224" fill="#80b8b7" font-size="9">DATA · SYSTEMS</text>
-            </g>
-          </svg>
-        </div>
 
         <!-- HERO CONTENT -->
 
