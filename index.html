@@ -1475,6 +1475,15 @@ footer{border-top:1px solid rgba(157,191,215,.15)}
 @media(max-width:1000px) and (min-width:761px){.intro-content{width:calc(100% - 260px)!important}.hero-network-art{width:245px!important;max-width:31%!important}}
 @media(max-width:760px){.intro{display:block!important;min-height:auto!important}.intro-content{width:100%!important;max-width:100%!important}.hero-network-art{display:none!important}}
 
+
+/* Subdued ambient background — professional and intentionally low contrast */
+.hero-network-art{opacity:.13!important;filter:blur(2.5px)!important;right:-15px!important;width:410px!important;max-width:38%!important;z-index:0!important}
+.hero-network-art svg{opacity:.85!important}
+.intro-content{z-index:2!important}
+.intro{background:radial-gradient(ellipse at 80% 45%,rgba(74,140,151,.075),transparent 48%)!important}
+@media(max-width:1000px) and (min-width:761px){.hero-network-art{opacity:.09!important;width:280px!important;max-width:30%!important}}
+@media(max-width:760px){.hero-network-art{display:none!important}.intro{background:radial-gradient(ellipse at 95% 20%,rgba(74,140,151,.055),transparent 50%)!important}}
+
 </style>
 
 </head>
