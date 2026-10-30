@@ -1465,6 +1465,16 @@ footer{border-top:1px solid rgba(157,191,215,.15)}
 @media(max-width:1000px){.intro{grid-template-columns:minmax(0,1fr) 260px!important;gap:12px!important}.hero-network-art{opacity:.48}.intro h1{font-size:clamp(39px,4.6vw,59px)!important}}
 @media(max-width:760px){.intro{display:block!important}.hero-network-art{display:none!important}.intro h1{font-size:clamp(38px,7.8vw,53px)!important}}
 
+
+/* Reliable hero art placement: independent of prior grid layout rules */
+.intro{display:flex!important;position:relative!important;align-items:center!important;isolation:isolate;min-height:545px!important}
+.intro-content{position:relative!important;z-index:2!important;width:calc(100% - 365px)!important;max-width:790px!important;flex:0 1 auto}
+.hero-network-art{display:block!important;position:absolute!important;right:0!important;top:50%!important;transform:translateY(-50%)!important;width:350px!important;max-width:34%!important;height:auto!important;opacity:1!important;visibility:visible!important;z-index:1!important;pointer-events:none}
+.hero-network-art svg{display:block!important;width:100%!important;height:auto!important;overflow:visible}
+.hero-network-art svg path{stroke-opacity:1}
+@media(max-width:1000px) and (min-width:761px){.intro-content{width:calc(100% - 260px)!important}.hero-network-art{width:245px!important;max-width:31%!important}}
+@media(max-width:760px){.intro{display:block!important;min-height:auto!important}.intro-content{width:100%!important;max-width:100%!important}.hero-network-art{display:none!important}}
+
 </style>
 
 </head>
