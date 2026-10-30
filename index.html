@@ -1401,6 +1401,31 @@ footer{border-top:1px solid rgba(157,191,215,.15)}
 .experience-top{position:relative;z-index:1}
 .experience-tag{position:relative;z-index:2;flex-shrink:0;white-space:normal;max-width:100%;color:#baf8ed!important;background:#193b3c!important;border:1px solid rgba(140,231,216,.4)!important}
 @media(max-width:760px){.experience-top{flex-direction:column;align-items:flex-start;gap:12px}.experience-tag{align-self:flex-start}}
+
+/* Hero layout refinement: balanced editorial type and compact engineering diagram */
+.intro{min-height:560px;padding:82px 0 62px;display:grid;grid-template-columns:minmax(0,1.4fr) minmax(310px,.85fr);align-items:center;gap:44px;overflow:visible}
+.intro:before{display:none!important;content:none!important}
+.intro-content{max-width:760px;grid-column:1;grid-row:1}
+.intro h1{font-size:clamp(45px,4.6vw,69px);letter-spacing:-2.8px;line-height:1.08;max-width:760px}
+.intro h2{font-size:clamp(19px,2vw,24px);margin-top:22px}
+.intro-description{font-size:15.5px;line-height:1.7;max-width:680px}
+.intro .eyebrow{font-size:11px;margin-bottom:22px;letter-spacing:1.6px}
+.intro .buttons{margin-top:25px}
+.hero-architecture{grid-column:2;grid-row:1;position:relative;z-index:1;padding:23px 19px 18px;border:1px solid rgba(140,231,216,.23);border-radius:15px;background:linear-gradient(145deg,#12232b,#0b141e 78%);box-shadow:0 20px 55px rgba(0,0,0,.2);min-width:0}
+.arch-kicker{font:700 9px/1.5 "Courier New",monospace;letter-spacing:1.1px;color:#9cdcd4;margin-bottom:23px;display:flex;align-items:center;gap:8px}
+.arch-dot{width:7px;height:7px;border-radius:50%;background:#8ce7d8;box-shadow:0 0 0 4px rgba(140,231,216,.1)}
+.arch-node{display:flex;gap:11px;align-items:center;padding:13px 11px;border:1px solid rgba(154,193,208,.23);background:#152833;border-radius:9px;min-width:0}
+.arch-node strong{display:block;color:#effaf7;font-size:12px;line-height:1.4}
+.arch-node small{display:block;color:#a9c0cc;font-size:10px;margin-top:3px}
+.arch-icon{display:flex;align-items:center;justify-content:center;flex:none;width:27px;height:27px;border:1px solid rgba(140,231,216,.35);border-radius:7px;color:#8ce7d8;font:700 10px "Courier New",monospace}
+.arch-connector{height:26px;display:flex;justify-content:center}.arch-connector span{height:100%;border-left:1px solid #5a9c99}
+.arch-branch{height:27px;position:relative;margin:0 24%}.arch-branch:before{content:"";position:absolute;top:13px;left:0;right:0;border-top:1px solid #5a9c99}.arch-branch span{position:absolute;top:13px;height:14px;border-left:1px solid #5a9c99}.arch-branch span:first-child{left:0}.arch-branch span:last-child{right:0}
+.arch-bottom{display:grid;grid-template-columns:1fr 1fr;gap:9px}.arch-bottom .arch-node{padding:11px 8px;gap:7px}.arch-bottom .arch-icon{width:23px;height:23px}.arch-bottom .arch-node strong{font-size:11px}.arch-bottom .arch-node small{font-size:9px}
+.arch-footer{border-top:1px solid rgba(154,193,208,.17);padding-top:16px;margin-top:22px;display:flex;justify-content:space-between;gap:12px;font:700 9px/1.5 "Courier New",monospace;letter-spacing:.5px;color:#a2c8c4}
+.arch-footer span{color:#8ce7d8}
+@media(max-width:1000px){.intro{grid-template-columns:minmax(0,1fr) minmax(270px,.75fr);gap:25px}.intro h1{font-size:clamp(44px,5vw,62px)}.hero-architecture{padding:18px 13px}.arch-footer{font-size:8px}}
+@media(max-width:760px){.intro{display:flex;flex-direction:column;align-items:stretch;gap:30px;padding:65px 0 50px}.intro-content{max-width:100%}.intro h1{font-size:clamp(42px,9vw,60px);letter-spacing:-2px}.hero-architecture{width:min(100%,470px);align-self:center}.intro-description{font-size:15px}}
+
 </style>
 
 </head>
@@ -1480,241 +1505,19 @@ footer{border-top:1px solid rgba(157,191,215,.15)}
     <div class="intro">
 
 
-        <!-- DISTRIBUTED SYSTEM NETWORK -->
-
-        <div
-            class="network-bg"
-            aria-hidden="true"
-        >
-
-            <svg viewBox="0 0 600 520">
-
-
-                <defs>
-
-                    <linearGradient
-                        id="networkGradient"
-                        x1="0%"
-                        y1="0%"
-                        x2="100%"
-                        y2="100%"
-                    >
-
-                        <stop
-                            offset="0%"
-                            stop-color="#38bdf8"
-                        />
-
-                        <stop
-                            offset="100%"
-                            stop-color="#a78bfa"
-                        />
-
-                    </linearGradient>
-
-                </defs>
-
-
-                <!-- GLOWS -->
-
-                <circle
-                    class="network-glow"
-                    cx="350"
-                    cy="210"
-                    r="105"
-                />
-
-
-                <circle
-                    class="network-glow-purple"
-                    cx="490"
-                    cy="350"
-                    r="125"
-                />
-
-
-                <!-- PRIMARY CONNECTIONS -->
-
-                <line
-                    class="network-line"
-                    x1="120"
-                    y1="150"
-                    x2="270"
-                    y2="90"
-                />
-
-
-                <line
-                    class="network-line"
-                    x1="270"
-                    y1="90"
-                    x2="400"
-                    y2="165"
-                />
-
-
-                <line
-                    class="network-line"
-                    x1="400"
-                    y1="165"
-                    x2="525"
-                    y2="110"
-                />
-
-
-                <line
-                    class="network-line"
-                    x1="120"
-                    y1="150"
-                    x2="220"
-                    y2="275"
-                />
-
-
-                <line
-                    class="network-line"
-                    x1="220"
-                    y1="275"
-                    x2="400"
-                    y2="165"
-                />
-
-
-                <line
-                    class="network-line"
-                    x1="220"
-                    y1="275"
-                    x2="350"
-                    y2="365"
-                />
-
-
-                <line
-                    class="network-line"
-                    x1="350"
-                    y1="365"
-                    x2="490"
-                    y2="300"
-                />
-
-
-                <line
-                    class="network-line"
-                    x1="490"
-                    y1="300"
-                    x2="525"
-                    y2="110"
-                />
-
-
-                <line
-                    class="network-line"
-                    x1="350"
-                    y1="365"
-                    x2="465"
-                    y2="440"
-                />
-
-
-                <!-- SECONDARY PATHS -->
-
-                <line
-                    class="network-line-soft"
-                    x1="270"
-                    y1="90"
-                    x2="350"
-                    y2="365"
-                />
-
-
-                <line
-                    class="network-line-soft"
-                    x1="120"
-                    y1="150"
-                    x2="490"
-                    y2="300"
-                />
-
-
-                <line
-                    class="network-line-soft"
-                    x1="220"
-                    y1="275"
-                    x2="525"
-                    y2="110"
-                />
-
-
-                <!-- NODES -->
-
-                <circle
-                    class="network-node"
-                    cx="120"
-                    cy="150"
-                    r="4"
-                />
-
-
-                <circle
-                    class="network-node-purple"
-                    cx="270"
-                    cy="90"
-                    r="5"
-                />
-
-
-                <circle
-                    class="network-node"
-                    cx="400"
-                    cy="165"
-                    r="6"
-                />
-
-
-                <circle
-                    class="network-node-purple"
-                    cx="525"
-                    cy="110"
-                    r="4"
-                />
-
-
-                <circle
-                    class="network-node"
-                    cx="220"
-                    cy="275"
-                    r="5"
-                />
-
-
-                <circle
-                    class="network-node-purple"
-                    cx="350"
-                    cy="365"
-                    r="6"
-                />
-
-
-                <circle
-                    class="network-node"
-                    cx="490"
-                    cy="300"
-                    r="5"
-                />
-
-
-                <circle
-                    class="network-node-purple"
-                    cx="465"
-                    cy="440"
-                    r="4"
-                />
-
-            </svg>
-
+        <!-- Compact architecture visual: illustrative, not a production topology -->
+        <div class="hero-architecture" aria-label="Illustrative backend flow from API to processing, database and cache">
+          <div class="arch-kicker"><span class="arch-dot"></span> BACKEND SYSTEMS / CONCEPTUAL FLOW</div>
+          <div class="arch-node arch-entry"><span class="arch-icon">01</span><span><strong>API Layer</strong><small>Requests · Validation</small></span></div>
+          <div class="arch-connector"><span></span></div>
+          <div class="arch-node arch-process"><span class="arch-icon">02</span><span><strong>Processing Service</strong><small>Business Logic · Batching</small></span></div>
+          <div class="arch-branch"><span></span><span></span></div>
+          <div class="arch-bottom">
+            <div class="arch-node"><span class="arch-icon">03</span><span><strong>Database</strong><small>SQL · Persistence</small></span></div>
+            <div class="arch-node"><span class="arch-icon">04</span><span><strong>Cache</strong><small>Redis · Fast Reads</small></span></div>
+          </div>
+          <div class="arch-footer">DESIGN PRINCIPLES <span>↗</span> RELIABLE · SCALABLE · OBSERVABLE</div>
         </div>
-
-
 
         <!-- HERO CONTENT -->
 
