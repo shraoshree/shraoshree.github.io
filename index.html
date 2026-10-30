@@ -1395,6 +1395,12 @@ footer{border-top:1px solid rgba(157,191,215,.15)}
 @media(max-width:850px){.intro{min-height:auto;padding:85px 0}.intro:before{width:230px;height:230px;right:-100px}.intro h1{letter-spacing:-3px}.impact-band{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}.stat:nth-child(2){border-right:0}.stat:nth-child(-n+2){border-bottom:1px solid rgba(157,191,215,.19)}}
 @media(max-width:540px){.intro{padding:65px 0 55px}.intro h1{font-size:51px;letter-spacing:-2.5px}.intro h2{font-size:21px}.intro-description{font-size:15px}.stat{padding:20px 14px}.stat-number{font-size:31px}.experience{padding:25px 20px!important}.impact-panel{padding:23px 20px}.section-heading h2{font-size:35px}section{padding:66px 0}}
 
+
+/* Fix: decorative experience corner must never obscure job titles or tags */
+.experience::before{display:none!important;content:none!important}
+.experience-top{position:relative;z-index:1}
+.experience-tag{position:relative;z-index:2;flex-shrink:0;white-space:normal;max-width:100%;color:#baf8ed!important;background:#193b3c!important;border:1px solid rgba(140,231,216,.4)!important}
+@media(max-width:760px){.experience-top{flex-direction:column;align-items:flex-start;gap:12px}.experience-tag{align-self:flex-start}}
 </style>
 
 </head>
