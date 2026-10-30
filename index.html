@@ -1451,6 +1451,11 @@ footer{border-top:1px solid rgba(157,191,215,.15)}
 @media(max-width:760px){.intro h1{font-size:clamp(38px,7.8vw,53px)!important;letter-spacing:-.008em!important}}
 @media(max-width:390px){.intro h1{font-size:clamp(33px,8vw,40px)!important}}
 
+
+/* Hero after removing the architecture illustration */
+.intro{display:flex!important;align-items:center!important;min-height:510px!important;padding:75px 0 65px!important}
+.intro-content{max-width:880px!important;width:100%}
+@media(max-width:760px){.intro{min-height:auto!important;padding:62px 0 50px!important}}
 </style>
 
 </head>
@@ -1529,21 +1534,6 @@ footer{border-top:1px solid rgba(157,191,215,.15)}
 
     <div class="intro">
 
-
-        <!-- Conceptual data correctness workflow; based on ingestion, validation and reconciliation experience -->
-        <div class="hero-architecture" aria-label="Conceptual data processing flow: Kafka ingestion, data validation, SQL reconciliation, and reliable storage">
-          <div class="arch-kicker"><span class="arch-dot"></span> DATA SYSTEMS / CONCEPTUAL FLOW</div>
-          <div class="arch-flow">
-            <div class="arch-node"><span class="arch-icon">01</span><span><strong>Ingest · Kafka</strong><small>Events · Consumer monitoring</small></span></div>
-            <div class="arch-flow-arrow" aria-hidden="true">↓</div>
-            <div class="arch-node"><span class="arch-icon">02</span><span><strong>Validate</strong><small>Quality checks · Duplicate detection</small></span></div>
-            <div class="arch-flow-arrow" aria-hidden="true">↓</div>
-            <div class="arch-node"><span class="arch-icon">03</span><span><strong>Reconcile</strong><small>SQL checks · Idempotent reprocessing</small></span></div>
-            <div class="arch-flow-arrow" aria-hidden="true">↓</div>
-            <div class="arch-node"><span class="arch-icon">04</span><span><strong>Store</strong><small>Database writes · Data completeness</small></span></div>
-          </div>
-          <div class="arch-footer">ENGINEERING FOCUS <span>↗</span> ACCURACY · RELIABILITY</div>
-        </div>
 
         <!-- HERO CONTENT -->
 
