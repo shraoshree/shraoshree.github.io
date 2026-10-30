@@ -1322,6 +1322,79 @@ footer{color:#8ca2b8}
 @media(max-width:540px){.container{width:91%}nav{align-items:flex-start;gap:14px;padding:18px 0;flex-direction:column}nav ul{flex-wrap:wrap;gap:9px 16px}.intro h1{font-size:47px}.intro-description{font-size:15px}.stats{gap:10px}.stat{padding:18px 14px}.stat-label{font-size:9px}.section-heading{margin-bottom:26px}section{padding:60px 0}.pipeline b{font-size:12px}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
 
+
+/* Editorial portfolio redesign */
+:root{--bg:#070b11;--card:#101b27;--border:rgba(157,191,215,.18);--text:#f5f8fa;--muted:#b6c3cf;--muted-2:#91a7ba;--blue:#8ce7d8;--purple:#d0bbff}
+body{background:#070b11;color:#b6c3cf;font-family:Inter,"Segoe UI",Arial,sans-serif}
+body::before{background-size:72px 72px;opacity:.35}
+.container{width:min(1190px,90%)}
+nav{border-bottom:1px solid rgba(255,255,255,.12);padding:0 2px}
+.brand{font-size:18px;font-weight:800;letter-spacing:-.7px}
+.brand:before{content:"●";font-size:11px;color:#8ce7d8;margin-right:12px;vertical-align:3px}
+nav a{font-size:13px;color:#c7d2dc}
+nav a:hover{color:#8ce7d8}
+.intro{min-height:670px;padding:105px 0 90px;align-items:flex-start}
+.intro:before{content:"";position:absolute;right:0;top:55px;width:410px;height:410px;border:1px solid rgba(140,231,216,.13);border-radius:50%;box-shadow:0 0 0 75px rgba(140,231,216,.025),0 0 0 150px rgba(140,231,216,.016);pointer-events:none}
+.intro-content{max-width:850px}
+.eyebrow{font-size:12px;letter-spacing:2.4px;color:#8ce7d8;margin-bottom:30px}
+.intro h1{font-size:clamp(54px,7.3vw,100px);letter-spacing:-5px;line-height:.99;max-width:860px;font-weight:850}
+.intro h2{margin-top:26px;margin-bottom:20px;font-size:clamp(20px,2.4vw,28px);background:none;color:#e1e8ef;font-weight:600}
+.intro h2 span{color:#a6b8c6!important}
+.intro-description{max-width:760px;color:#b9c8d4;font-size:17px;line-height:1.85}
+.highlight{color:#8ce7d8}
+.buttons{gap:12px;margin-top:32px}
+.button{padding:13px 21px;border-radius:7px;border-color:rgba(192,217,228,.25);background:rgba(255,255,255,.035);color:#f0f5f8}
+.button-primary{background:#8ce7d8;color:#071216;border:1px solid #8ce7d8}
+.button-primary:hover{background:#c1fff2;color:#071216;border-color:#c1fff2}
+.network-bg{right:-65px;top:30px;opacity:.12;filter:grayscale(1)}
+.stats{margin-top:-15px;margin-bottom:50px;gap:0;border:1px solid rgba(157,191,215,.22);border-radius:13px;overflow:hidden;background:#101923}
+.stat{border:0;border-right:1px solid rgba(157,191,215,.19);border-radius:0;background:none;padding:26px 25px;box-shadow:none}
+.stat:last-child{border-right:0}
+.stat:before{display:none}
+.stat-number{font-size:37px;letter-spacing:-2px;color:#e9faf6;background:none;-webkit-text-fill-color:#e9faf6}
+.stat-label{font-size:10px;letter-spacing:1.3px;color:#9fb4c5}
+section{padding:96px 0;border-top:1px solid rgba(157,191,215,.1)}
+.section-heading{margin-bottom:35px}
+.section-label{font-size:11px;letter-spacing:2.5px;color:#8ce7d8;margin-bottom:12px}
+.section-heading h2{font-size:clamp(34px,4vw,50px);letter-spacing:-2px;line-height:1.13;max-width:800px}
+.section-heading p{font-size:16px;color:#9fb2c3;line-height:1.8}
+.glass{background:#111b26;border:1px solid rgba(157,191,215,.18);box-shadow:none;backdrop-filter:none;-webkit-backdrop-filter:none}
+.about-grid{gap:20px}
+.about-text,.quick-info{border-radius:12px}
+.about-text p{line-height:1.95}
+.experience{border-radius:13px;padding:35px 38px!important;position:relative}
+.experience::before{background:#8ce7d8!important}
+.experience h3{font-size:25px;letter-spacing:-.6px}
+.experience-tag{color:#a4eadf!important;border-color:rgba(140,231,216,.3)!important;background:rgba(140,231,216,.07)!important}
+.experience li{padding-left:5px;line-height:1.9}
+.experience li::marker{color:#8ce7d8}
+.projects{gap:20px}
+.project{border-radius:14px;background:#111b26}
+.project:hover{transform:translateY(-3px);border-color:rgba(140,231,216,.48);box-shadow:0 18px 60px rgba(0,0,0,.2)}
+.project-number{font-size:11px;color:#8ce7d8;letter-spacing:2.3px}
+.project h3{font-size:27px;line-height:1.2;letter-spacing:-1px}
+.project-visual{background:#09121c;border-color:rgba(140,231,216,.18);padding:21px;border-radius:9px}
+.visual-label{color:#8ce7d8}
+.pipeline span{border-color:rgba(140,231,216,.28);background:rgba(140,231,216,.06);color:#e1f6f1}
+.pipeline b{color:#8ce7d8}
+.project-outcome strong{color:#8ce7d8}
+.project-link{color:#8ce7d8!important}
+.tech,.skill{border-color:rgba(167,198,215,.19)!important;background:rgba(255,255,255,.035)!important}
+.skill-card,.education-card{border-radius:12px}
+.contact{background:linear-gradient(125deg,#152c32,#111b27 70%)!important;border:1px solid rgba(140,231,216,.2)!important;border-radius:17px}
+.contact-label{color:#8ce7d8!important}
+.contact h2{font-size:clamp(35px,5vw,59px);letter-spacing:-2px}
+footer{border-top:1px solid rgba(157,191,215,.15)}
+.impact-band{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:20px}
+.impact-panel{padding:29px 30px;border:1px solid rgba(157,191,215,.18);background:#101a25;border-radius:12px}
+.impact-panel .mini-label{display:block;color:#8ce7d8;font:700 11px "Courier New",monospace;letter-spacing:2px;margin-bottom:13px}
+.impact-panel h3{color:#f4f8fa;font-size:20px;letter-spacing:-.5px;margin-bottom:12px}
+.impact-panel p{font-size:14px;line-height:1.85;color:#b6c6d4}
+.work-approach{margin-top:24px;padding:23px 28px;border-left:3px solid #8ce7d8;background:rgba(140,231,216,.045);color:#d4e3eb;line-height:1.8}
+.work-approach strong{color:#8ce7d8}
+@media(max-width:850px){.intro{min-height:auto;padding:85px 0}.intro:before{width:230px;height:230px;right:-100px}.intro h1{letter-spacing:-3px}.impact-band{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}.stat:nth-child(2){border-right:0}.stat:nth-child(-n+2){border-bottom:1px solid rgba(157,191,215,.19)}}
+@media(max-width:540px){.intro{padding:65px 0 55px}.intro h1{font-size:51px;letter-spacing:-2.5px}.intro h2{font-size:21px}.intro-description{font-size:15px}.stat{padding:20px 14px}.stat-number{font-size:31px}.experience{padding:25px 20px!important}.impact-panel{padding:23px 20px}.section-heading h2{font-size:35px}section{padding:66px 0}}
+
 </style>
 
 </head>
@@ -1647,7 +1720,7 @@ footer{color:#8ca2b8}
             </div>
 
 
-            <h1>Building systems<br>that scale<span class="highlight">.</span></h1>
+            <h1>Engineering reliable<br><span class="highlight">systems at scale.</span></h1>
 
 
             <h2>Shraoshree Ghosh <span style="color:#b8c9dc;font-weight:450">/ Software Engineer</span></h2>
@@ -1668,7 +1741,7 @@ footer{color:#8ca2b8}
                 </a>
 
 
-                <a class="button" href="Shraoshree_Ghosh_Resume.pdf?v=20261030-portfolio2" target="_blank" rel="noopener noreferrer">View Resume</a>
+                <a class="button" href="Shraoshree_Ghosh_Resume.pdf?v=20261030-design3" target="_blank" rel="noopener noreferrer">View Resume</a>
 
 
                 <a
@@ -1767,10 +1840,10 @@ footer{color:#8ca2b8}
     ====================================================== -->
 
     <section id="about">
-<div class="section-heading"><div class="section-label">01 / ABOUT</div><h2>Engineering reliable systems in production.</h2></div>
+<div class="section-heading"><div class="section-label">01 / ABOUT</div><h2>From production incidents to lasting engineering improvements.</h2></div>
 <div class="about-grid"><div class="about-text glass"><p>I'm a software engineer with 4+ years of experience at Tata Consultancy Services, including work for Nokia on high-volume telecom backend and data-processing systems.</p><p>My work includes C++/SQL performance optimization, Kafka ingestion support, SQL reconciliation, idempotent reprocessing, dbt data-quality checks, Python automation, production incident response and deployment validation.</p><p>I enjoy tracing problems from incoming data through processing, database writes and reporting, then building practical fixes that improve performance and reliability.</p></div>
 <div class="quick-info glass"><h3>Engineering Profile</h3><div class="terminal-line"><span class="prompt">&gt;</span> Thornton, Colorado · Open to relocation</div><div class="terminal-line"><span class="prompt">&gt;</span> Python / C++ / SQL</div><div class="terminal-line"><span class="prompt">&gt;</span> Backend &amp; Data Systems</div><div class="terminal-line"><span class="prompt">&gt;</span> Reliability &amp; Incident Response</div><div class="terminal-line"><span class="prompt">&gt;</span> Available to join immediately</div></div></div>
-</section>
+<div class="impact-band" aria-label="Engineering impact stories"><article class="impact-panel"><span class="mini-label">01 / PERFORMANCE ENGINEERING</span><h3>Finding the bottleneck, fixing the system</h3><p>Profiled C++ and SQL processing workloads, identified database-write overhead, and improved batching and caching. The result: <strong>35% higher throughput</strong> across workflows handling <strong>10M+ telecom records daily</strong>.</p></article><article class="impact-panel"><span class="mini-label">02 / PRODUCTION RELIABILITY</span><h3>Making data processing dependable</h3><p>Worked across Kafka ingestion, validation, reconciliation, idempotent reprocessing and production troubleshooting to support <strong>99.9% processing accuracy</strong> and resolve <strong>50+ incidents</strong>.</p></article></div><div class="work-approach"><strong>How I work:</strong> trace the failure through logs, services and data → identify the root cause → implement and validate the fix → monitor production behavior.</div></section>
 
 
 
@@ -1779,7 +1852,7 @@ footer{color:#8ca2b8}
     ====================================================== -->
 
     <section id="experience">
-<div class="section-heading"><div class="section-label">02 / EXPERIENCE</div><h2>Production engineering experience.</h2></div>
+<div class="section-heading"><div class="section-label">02 / EXPERIENCE</div><h2>Impact in production, not just on paper.</h2></div>
 <div class="experience glass"><div class="experience-top"><div><h3>Senior Software Engineer</h3><div class="company">Tata Consultancy Services · Client: Nokia · Kolkata, India</div><p>Mar 2023 – Mar 2025</p></div><div class="experience-tag">Backend · Data · Reliability</div></div><ul>
 <li>Optimized C++/SQL backend processing services handling 10M+ telecom records daily; profiled database bottlenecks and implemented batching and caching improvements that increased throughput 35%.</li>
 <li>Supported continuous Kafka-based ingestion for production workflows; troubleshot consumer lag, duplicate messages, application failures, and connectivity issues, using idempotent SQL checks and UPSERTs to safely handle redelivered events.</li>
@@ -1804,7 +1877,7 @@ footer{color:#8ca2b8}
     ====================================================== -->
 
     <section id="projects">
-<div class="section-heading"><div class="section-label">03 / SELECTED WORK</div><h2>Selected engineering work.</h2><p>Practical applications of APIs, databases, caching and production incident analysis.</p></div>
+<div class="section-heading"><div class="section-label">03 / SELECTED WORK</div><h2>Projects built around real engineering problems.</h2><p>Practical applications of APIs, databases, caching and production incident analysis.</p></div>
 <div class="projects"><div class="project glass"><div class="project-number">PROJECT 01</div><div class="project-content"><h3>URL Shortener API</h3><div class="project-visual" role="img" aria-label="URL shortener architecture: API, PostgreSQL and Redis cache"><div class="visual-label">SYSTEM FLOW / URL SHORTENER</div><div class="pipeline"><span>Client</span><b>→</b><span>FastAPI</span><b>→</b><span>PostgreSQL</span><b>↔</b><span>Redis cache</span></div><p class="project-outcome"><strong>Engineering focus:</strong> fast redirects, cache invalidation, link expiration and rate limiting.</p></div><p>Built a REST API using FastAPI and PostgreSQL with URL expiration, click tracking, short-link deletion and OpenAPI documentation.</p><p>Implemented Redis TTL caching and cache invalidation, rate limiting and a Docker Compose development environment.</p><div class="tech-stack"><span class="tech">Python</span><span class="tech">FastAPI</span><span class="tech">PostgreSQL</span><span class="tech">Redis</span><span class="tech">Docker</span><span class="tech">REST APIs</span></div><div class="project-actions"><a class="project-link" href="https://github.com/shraoshree/url-shortener" target="_blank" rel="noopener noreferrer">View Source →</a></div></div></div>
 <div class="project glass"><div class="project-number">PROJECT 02</div><div class="project-content"><h3>AI Incident Analysis Copilot</h3><div class="project-visual" role="img" aria-label="Incident copilot architecture: incident input, vector retrieval, language model and structured analysis"><div class="visual-label">SYSTEM FLOW / INCIDENT ANALYSIS</div><div class="pipeline"><span>Incident</span><b>→</b><span>FastAPI</span><b>→</b><span>pgvector retrieval</span><b>→</b><span>Gemini</span></div><p class="project-outcome"><strong>Engineering focus:</strong> relevant runbook retrieval, structured hypotheses and resilient API handling.</p></div><p>Developed a Python/FastAPI incident analysis API backed by PostgreSQL and pgvector. Retrieves relevant historical incidents and runbooks to support structured investigation responses.</p><p>Uses Pydantic and Gemini with structured outputs, retry/fallback handling, health checks and logging.</p><div class="tech-stack"><span class="tech">Python</span><span class="tech">FastAPI</span><span class="tech">Pydantic</span><span class="tech">Gemini</span><span class="tech">PostgreSQL</span><span class="tech">pgvector</span></div><div class="project-actions"><a class="project-link" href="https://github.com/shraoshree/ai-incident-copilot" target="_blank" rel="noopener noreferrer">View Source →</a></div></div></div></div>
 </section>
@@ -1816,7 +1889,7 @@ footer{color:#8ca2b8}
     ====================================================== -->
 
     <section id="skills">
-<div class="section-heading"><div class="section-label">04 / TECHNICAL SKILLS</div><h2>Technologies I work with.</h2></div><div class="skill-grid"><div class="skill-card glass"><h3>Programming & Backend</h3><div class="skill-list"><span class="skill">Python</span><span class="skill">C++</span><span class="skill">SQL</span><span class="skill">FastAPI</span><span class="skill">REST APIs</span><span class="skill">Object-Oriented Design</span><span class="skill">Data Structures & Algorithms</span></div></div><div class="skill-card glass"><h3>Data & Reliability</h3><div class="skill-list"><span class="skill">PostgreSQL</span><span class="skill">SQL Server</span><span class="skill">Redis</span><span class="skill">Data Modeling</span><span class="skill">Batch Processing</span><span class="skill">Validation & Reconciliation</span><span class="skill">Idempotency</span><span class="skill">Caching</span><span class="skill">Tableau</span><span class="skill">dbt Data-Quality Testing</span></div></div><div class="skill-card glass"><h3>Production & Delivery</h3><div class="skill-list"><span class="skill">Linux</span><span class="skill">Monitoring & Logging</span><span class="skill">Health Checks & Alerting</span><span class="skill">Root-Cause Analysis</span><span class="skill">Incident Response</span><span class="skill">AWS EC2 / S3</span><span class="skill">Docker</span><span class="skill">Kubernetes</span><span class="skill">Jenkins CI/CD</span><span class="skill">Git / Gerrit</span><span class="skill">Kafka Consumer Monitoring</span></div></div></div>
+<div class="section-heading"><div class="section-label">04 / TECHNICAL SKILLS</div><h2>Tools I use to build, debug and deliver.</h2></div><div class="skill-grid"><div class="skill-card glass"><h3>Programming & Backend</h3><div class="skill-list"><span class="skill">Python</span><span class="skill">C++</span><span class="skill">SQL</span><span class="skill">FastAPI</span><span class="skill">REST APIs</span><span class="skill">Object-Oriented Design</span><span class="skill">Data Structures & Algorithms</span></div></div><div class="skill-card glass"><h3>Data & Reliability</h3><div class="skill-list"><span class="skill">PostgreSQL</span><span class="skill">SQL Server</span><span class="skill">Redis</span><span class="skill">Data Modeling</span><span class="skill">Batch Processing</span><span class="skill">Validation & Reconciliation</span><span class="skill">Idempotency</span><span class="skill">Caching</span><span class="skill">Tableau</span><span class="skill">dbt Data-Quality Testing</span></div></div><div class="skill-card glass"><h3>Production & Delivery</h3><div class="skill-list"><span class="skill">Linux</span><span class="skill">Monitoring & Logging</span><span class="skill">Health Checks & Alerting</span><span class="skill">Root-Cause Analysis</span><span class="skill">Incident Response</span><span class="skill">AWS EC2 / S3</span><span class="skill">Docker</span><span class="skill">Kubernetes</span><span class="skill">Jenkins CI/CD</span><span class="skill">Git / Gerrit</span><span class="skill">Kafka Consumer Monitoring</span></div></div></div>
 </section>
 
 
@@ -1826,7 +1899,7 @@ footer{color:#8ca2b8}
     ====================================================== -->
 
     <section id="education">
-<div class="section-heading"><div class="section-label">05 / EDUCATION</div><h2>Academic background.</h2></div><div class="education-grid"><div class="education-card glass"><h3>M.S. Business Analytics</h3><p>Trine University · Expected May 2027</p><p>GPA 3.67 / 4.0</p></div><div class="education-card glass"><h3>M.Tech Computer Science &amp; Engineering</h3><p>Vellore Institute of Technology · 2020</p></div><div class="education-card glass"><h3>B.Tech Computer Science</h3><p>Christian College of Engineering &amp; Technology · 2017</p></div></div>
+<div class="section-heading"><div class="section-label">05 / EDUCATION</div><h2>A foundation in engineering and analytics.</h2></div><div class="education-grid"><div class="education-card glass"><h3>M.S. Business Analytics</h3><p>Trine University · Expected May 2027</p><p>GPA 3.67 / 4.0</p></div><div class="education-card glass"><h3>M.Tech Computer Science &amp; Engineering</h3><p>Vellore Institute of Technology · 2020</p></div><div class="education-card glass"><h3>B.Tech Computer Science</h3><p>Christian College of Engineering &amp; Technology · 2017</p></div></div>
 </section>
 
 
